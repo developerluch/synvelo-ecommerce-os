@@ -106,15 +106,7 @@ const FeaturesGrid = () => {
   ];
 
   return (
-    <section className="py-24 bg-background-secondary relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(220 50% 15% / 0.3) 1px, transparent 0)`,
-          backgroundSize: '50px 50px'
-        }} />
-      </div>
-
+    <section className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">

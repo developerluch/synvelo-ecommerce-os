@@ -31,8 +31,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-background-secondary border-t border-card-border">
-      <div className="container mx-auto px-6 py-16">
+    <footer className="border-t border-navy/20 relative">
+      <div className="container mx-auto px-6 py-16 relative z-10">
         {/* Newsletter Signup */}
         <div className="bg-gradient-card rounded-2xl p-8 border border-navy/20 mb-16 text-center">
           <h3 className="text-2xl font-bold mb-4">

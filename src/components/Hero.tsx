@@ -1,15 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, TrendingUp, Users, Zap } from "lucide-react";
 import { motion } from "framer-motion";
-import { BackgroundPaths } from "./BackgroundPaths";
 import dashboardHero from "@/assets/dashboard-hero.jpg";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background Paths */}
-      <BackgroundPaths />
-      
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-hero opacity-40" />
       

@@ -73,10 +73,7 @@ const SocialProof = () => {
   ];
 
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-hero opacity-30" />
-      
+    <section className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
