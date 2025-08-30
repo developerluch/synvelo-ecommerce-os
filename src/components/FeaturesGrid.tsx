@@ -1,71 +1,108 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
   Bot, 
   ShoppingCart, 
-  Truck, 
   BarChart3, 
   Zap, 
-  Shield,
+  Brain,
+  Target,
+  TrendingUp,
   ArrowRight,
-  Warehouse,
-  TrendingUp
+  CheckCircle,
+  Users,
+  Globe,
+  Lock,
+  Rocket,
+  DollarSign,
+  Eye,
+  MessageSquare,
+  Bell,
+  Database,
+  Cloud,
+  Shield,
+  Code,
+  Smartphone
 } from "lucide-react";
-import warehouseImage from "@/assets/warehouse-3d.jpg";
 
 const FeaturesGrid = () => {
-  const fbaFeatures = [
+  const coreFeatures = [
+    {
+      icon: BarChart3,
+      title: "Real-Time Dashboard",
+      description: "Widget-based modular dashboard with drag-and-drop customization and live data updates",
+      features: ["Multi-store management", "Dark/light mode", "Custom layouts", "Mobile responsive"]
+    },
     {
       icon: Bot,
-      title: "AI Automation Agents",
-      description: "8 autonomous AI agents working 24/7 on inventory, pricing, and optimization",
-      metric: "10+ hours saved weekly"
+      title: "8 AI Automation Agents",
+      description: "Autonomous agents handling inventory, pricing, PPC, reviews, and compliance 24/7",
+      features: ["Demand forecasting", "Dynamic repricing", "Campaign optimization", "Risk monitoring"]
     },
     {
       icon: ShoppingCart,
-      title: "Automated Checkout Bots",
-      description: "Purchase inventory from WebstaurantStore, Sam's Club, and Costco automatically",
-      metric: "Only platform with this feature"
+      title: "Checkout Bot Network",
+      description: "Industry-first automated purchasing from WebstaurantStore, Sam's Club, Costco",
+      features: ["Price drop triggers", "Multi-item optimization", "Auto-apply coupons", "Spending controls"]
     },
     {
-      icon: BarChart3,
-      title: "Amazon SP-API Integration",
-      description: "11 direct API endpoints for real-time data and profit analytics",
-      metric: "Real-time sync"
-    },
-    {
-      icon: Zap,
-      title: "Multi-Channel Notifications",
-      description: "Discord, SMS, and Email alerts for critical business events",
-      metric: "Never miss an opportunity"
+      icon: Database,
+      title: "11 Amazon SP-APIs",
+      description: "Complete integration with Amazon's seller APIs for real-time data and automation",
+      features: ["Inventory tracking", "Order management", "Financial reports", "FBA operations"]
     }
   ];
 
-  const threePlFeatures = [
+  const automationFeatures = [
     {
-      icon: Warehouse,
-      title: "Multi-Tenant Architecture",
-      description: "Serve multiple clients with isolated inventory and order management",
-      metric: "Unlimited clients"
+      icon: Brain,
+      title: "AI Agents Suite",
+      description: "8 specialized AI agents working autonomously on different aspects of your business",
+      agents: [
+        "Inventory Optimization Agent",
+        "Pricing Strategy Agent", 
+        "PPC Campaign Agent",
+        "Product Research Agent",
+        "Review Management Agent",
+        "Compliance Monitor Agent",
+        "Financial Optimization Agent",
+        "Customer Service Agent"
+      ]
     },
     {
-      icon: TrendingUp,
-      title: "TikTok Live Integration",
-      description: "First 3PL platform with direct TikTok Live selling integration",
-      metric: "Industry first"
-    },
-    {
-      icon: Truck,
-      title: "ShipStation Integration",
-      description: "Seamless shipping management with real-time tracking updates",
-      metric: "Multi-carrier support"
-    },
-    {
-      icon: Shield,
-      title: "Inventory Protection",
-      description: "Dynamic allocation prevents overselling across all channels",
-      metric: "Zero oversells"
+      icon: Target,
+      title: "Smart Notifications",
+      description: "Multi-channel alert system keeps you informed without overwhelming you",
+      channels: ["Discord webhooks", "Email campaigns", "SMS alerts", "In-app notifications", "Slack integration"]
     }
+  ];
+
+  const analyticsFeatures = [
+    {
+      title: "Profit & Loss Analytics",
+      metrics: ["Real-time P&L", "Product profitability", "ROI analysis", "Fee breakdowns"]
+    },
+    {
+      title: "Performance Tracking", 
+      metrics: ["Sales velocity", "Buy Box win rate", "PPC performance", "Organic vs paid"]
+    },
+    {
+      title: "Predictive Insights",
+      metrics: ["Demand forecasting", "Seasonal trends", "Competitor analysis", "Market opportunities"]
+    }
+  ];
+
+  const integrations = [
+    { name: "Keepa", type: "Price History" },
+    { name: "Jungle Scout", type: "Product Research" },
+    { name: "Helium 10", type: "Keywords" },
+    { name: "QuickBooks", type: "Accounting" },
+    { name: "Google Sheets", type: "Data Export" },
+    { name: "Zapier", type: "Workflows" },
+    { name: "Stripe", type: "Payments" },
+    { name: "Plaid", type: "Banking" }
   ];
 
   return (
@@ -81,122 +118,191 @@ const FeaturesGrid = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Two Powerful Products,{" "}
-            <span className="text-gradient-navy">One Ecosystem</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy/10 border border-navy/20 text-navy text-sm font-medium mb-6">
+            <BarChart3 className="w-4 h-4" />
+            Synvelo FBA Dashboard
+          </div>
+          <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+            The Ultimate{" "}
+            <span className="text-gradient-navy bg-clip-text text-transparent">Amazon FBA Platform</span>
           </h2>
-          <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
-            Whether you're scaling your Amazon business or running a 3PL operation, 
-            Synvelo provides the automation and insights you need to succeed.
+          <p className="text-xl text-foreground-secondary max-w-4xl mx-auto mb-8">
+            Replace $500+ in monthly tools with our comprehensive eCommerce automation platform. 
+            400+ features designed to scale your Amazon business to millions in revenue.
           </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* FBA Dashboard Section */}
-          <div className="space-y-8 animate-slide-in-left">
-            <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy/10 border border-navy/20 text-navy text-sm font-medium mb-4">
-                <BarChart3 className="w-4 h-4" />
-                Synvelo FBA Dashboard
-              </div>
-              <h3 className="text-3xl font-bold mb-4">Amazon Seller Automation</h3>
-              <p className="text-foreground-secondary text-lg mb-6">
-                Replaces $500+ in monthly tools with one comprehensive platform
-              </p>
-              <div className="text-2xl font-bold text-navy mb-6">$97/month</div>
+          
+          {/* Key Stats */}
+          <div className="flex flex-wrap justify-center gap-8 mb-12">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-navy">400+</div>
+              <div className="text-sm text-foreground-muted">Features</div>
             </div>
-
-            <div className="grid gap-4">
-              {fbaFeatures.map((feature, index) => (
-                <Card key={index} className="group hover:border-navy/30 transition-colors cursor-pointer">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-start gap-4">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-navy/10 text-navy group-hover:bg-navy/20 transition-colors">
-                        <feature.icon className="w-5 h-5" />
-                      </div>
-                      <div className="flex-1">
-                        <CardTitle className="text-lg mb-1">{feature.title}</CardTitle>
-                        <div className="text-xs text-navy font-medium">{feature.metric}</div>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <CardDescription className="text-foreground-secondary">
-                      {feature.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="text-center">
+              <div className="text-3xl font-bold text-navy">$50M+</div>
+              <div className="text-sm text-foreground-muted">Sales Powered</div>
             </div>
-
-            <Button variant="hero" size="lg" className="group w-full lg:w-auto">
-              Explore FBA Dashboard
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-navy">10+</div>
+              <div className="text-sm text-foreground-muted">Hours Saved Weekly</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-navy">$97</div>
+              <div className="text-sm text-foreground-muted">Monthly (vs $500+ competitors)</div>
+            </div>
           </div>
 
-          {/* 3PL Section */}
-          <div className="space-y-8 animate-slide-in-left animation-delay-200">
-            <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy/10 border border-navy/20 text-navy text-sm font-medium mb-4">
-                <Warehouse className="w-4 h-4" />
-                Synvelo 3PL
-              </div>
-              <h3 className="text-3xl font-bold mb-4">Warehouse Management</h3>
-              <p className="text-foreground-secondary text-lg mb-6">
-                Pay-as-you-go pricing with zero setup fees
-              </p>
-              <div className="text-2xl font-bold text-navy mb-6">$0.50/order + storage</div>
-            </div>
-
-            <div className="grid gap-4">
-              {threePlFeatures.map((feature, index) => (
-                <Card key={index} className="group hover:border-navy/30 transition-colors cursor-pointer">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-start gap-4">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-navy/10 text-navy group-hover:bg-navy/20 transition-colors">
-                        <feature.icon className="w-5 h-5" />
-                      </div>
-                      <div className="flex-1">
-                        <CardTitle className="text-lg mb-1">{feature.title}</CardTitle>
-                        <div className="text-xs text-navy font-medium">{feature.metric}</div>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <CardDescription className="text-foreground-secondary">
-                      {feature.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            <Button variant="outline-navy" size="lg" className="group w-full lg:w-auto">
-              Explore 3PL Solutions
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="hero" size="xl" className="group">
+              Start Free Trial
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button variant="outline-navy" size="xl" className="group">
+              Watch Demo
+              <Eye className="w-5 h-5" />
             </Button>
           </div>
         </div>
 
-        {/* 3D Warehouse Visualization */}
-        <div className="mt-20 animate-scale-in animation-delay-400">
-          <div className="relative">
-            <div className="absolute inset-0 bg-navy/10 rounded-3xl blur-3xl scale-105" />
-            <div className="relative bg-gradient-card rounded-3xl p-4 border border-navy/20">
-              <img
-                src={warehouseImage}
-                alt="Modern 3PL warehouse with automation systems"
-                className="w-full h-64 lg:h-80 object-cover rounded-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent rounded-2xl" />
-              <div className="absolute bottom-8 left-8 right-8">
-                <h4 className="text-2xl font-bold mb-2">Future-Ready Infrastructure</h4>
-                <p className="text-foreground-secondary">
-                  Built for the next generation of ecommerce operations
-                </p>
+        {/* Core Features Grid */}
+        <div className="mb-20">
+          <h3 className="text-3xl font-bold text-center mb-12">Core Platform Features</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {coreFeatures.map((feature, index) => (
+              <Card key={index} className="group hover:border-navy/30 transition-all duration-300 hover:shadow-lg">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-navy/10 text-navy group-hover:bg-navy/20 transition-colors">
+                      <feature.icon className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-lg">{feature.title}</CardTitle>
+                    </div>
+                  </div>
+                  <CardDescription className="text-foreground-secondary leading-relaxed">
+                    {feature.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {feature.features.map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-sm text-foreground-muted">
+                        <CheckCircle className="w-4 h-4 text-navy" />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Feature Categories Tabs */}
+        <div className="mb-20">
+          <Tabs defaultValue="automation" className="w-full">
+            <TabsList className="grid w-full grid-cols-4 mb-12">
+              <TabsTrigger value="automation">Automation & AI</TabsTrigger>
+              <TabsTrigger value="analytics">Analytics & Reports</TabsTrigger>
+              <TabsTrigger value="integrations">Integrations</TabsTrigger>
+              <TabsTrigger value="enterprise">Enterprise</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="automation" className="space-y-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                {automationFeatures.map((feature, index) => (
+                  <Card key={index} className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-navy/10 text-navy">
+                        <feature.icon className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-semibold">{feature.title}</h4>
+                      </div>
+                    </div>
+                    <p className="text-foreground-secondary mb-4">{feature.description}</p>
+                    <div className="space-y-2">
+                      {(feature.agents || feature.channels)?.map((item, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-sm">
+                          <CheckCircle className="w-4 h-4 text-navy" />
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  </Card>
+                ))}
               </div>
+            </TabsContent>
+            
+            <TabsContent value="analytics" className="space-y-8">
+              <div className="grid md:grid-cols-3 gap-6">
+                {analyticsFeatures.map((category, index) => (
+                  <Card key={index} className="p-6">
+                    <h4 className="text-xl font-semibold mb-4">{category.title}</h4>
+                    <div className="space-y-2">
+                      {category.metrics.map((metric, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-sm">
+                          <TrendingUp className="w-4 h-4 text-navy" />
+                          {metric}
+                        </div>
+                      ))}
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="integrations" className="space-y-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {integrations.map((integration, index) => (
+                  <Card key={index} className="p-4 text-center hover:border-navy/30 transition-colors">
+                    <div className="font-semibold text-navy">{integration.name}</div>
+                    <div className="text-sm text-foreground-muted">{integration.type}</div>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="enterprise" className="space-y-8">
+              <div className="grid md:grid-cols-3 gap-6">
+                <Card className="p-6 text-center">
+                  <Shield className="w-12 h-12 text-navy mx-auto mb-4" />
+                  <h4 className="text-xl font-semibold mb-2">Security & Compliance</h4>
+                  <p className="text-foreground-secondary text-sm">GDPR compliant, encrypted data, 2FA, audit logs</p>
+                </Card>
+                <Card className="p-6 text-center">
+                  <Cloud className="w-12 h-12 text-navy mx-auto mb-4" />
+                  <h4 className="text-xl font-semibold mb-2">Scalable Infrastructure</h4>
+                  <p className="text-foreground-secondary text-sm">Docker, Kubernetes, Redis caching, 99.9% uptime</p>
+                </Card>
+                <Card className="p-6 text-center">
+                  <Code className="w-12 h-12 text-navy mx-auto mb-4" />
+                  <h4 className="text-xl font-semibold mb-2">Developer Platform</h4>
+                  <p className="text-foreground-secondary text-sm">RESTful API, GraphQL, webhooks, SDK libraries</p>
+                </Card>
+              </div>
+            </TabsContent>
+          </Tabs>
+        </div>
+
+        {/* Pricing CTA */}
+        <div className="text-center bg-gradient-card rounded-3xl p-12 border border-navy/20">
+          <div className="max-w-3xl mx-auto">
+            <h3 className="text-3xl font-bold mb-4">Ready to Scale Your Amazon Business?</h3>
+            <p className="text-xl text-foreground-secondary mb-8">
+              Join thousands of sellers who've automated their way to millions in revenue
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+              <Button variant="hero" size="xl" className="group">
+                Start Free Trial
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button variant="outline-navy" size="xl">
+                Schedule Demo
+              </Button>
             </div>
+            <p className="text-sm text-foreground-muted">
+              No credit card required • 14-day free trial • Cancel anytime
+            </p>
           </div>
         </div>
       </div>
