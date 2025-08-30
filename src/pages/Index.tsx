@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import FeaturesGrid from "@/components/FeaturesGrid";
 import SocialProof from "@/components/SocialProof";
 import Footer from "@/components/Footer";
+import LiveChat from "@/components/LiveChat";
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <FeaturesGrid />
       <SocialProof />
       <Footer />
+      <LiveChat />
     </div>
   );
 };

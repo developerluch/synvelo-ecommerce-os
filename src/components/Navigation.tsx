@@ -38,15 +38,15 @@ const Navigation = () => {
           <div className="hidden md:flex items-center gap-8">
             {/* Products Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground-secondary hover:text-navy transition-colors">
+              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground-secondary hover:text-navy transition-all duration-200 hover:scale-105 px-3 py-2 rounded-md hover:bg-navy/5">
                 Products
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background border border-card-border">
+              <DropdownMenuContent className="bg-background/95 backdrop-blur-md border border-card-border shadow-professional rounded-lg p-2 min-w-[200px]">
                 {productItems.map((item) => (
                   <DropdownMenuItem key={item.label} asChild>
-                    <a href={item.href} className="text-foreground-secondary hover:text-navy">
-                      {item.label}
+                    <a href={item.href} className="flex items-center px-3 py-2 rounded-md text-foreground-secondary hover:text-navy hover:bg-navy/10 transition-all duration-200 hover:scale-105 hover:translate-x-1 cursor-pointer group">
+                      <span className="group-hover:font-medium transition-all duration-200">{item.label}</span>
                     </a>
                   </DropdownMenuItem>
                 ))}
@@ -54,26 +54,26 @@ const Navigation = () => {
             </DropdownMenu>
 
             {/* Company */}
-            <a href="#company" className="text-foreground-secondary hover:text-navy transition-colors">
+            <a href="#company" className="text-foreground-secondary hover:text-navy transition-all duration-200 hover:scale-105 px-3 py-2 rounded-md hover:bg-navy/5">
               Company
             </a>
 
             {/* Pricing */}
-            <a href="#pricing" className="text-foreground-secondary hover:text-navy transition-colors">
+            <a href="#pricing" className="text-foreground-secondary hover:text-navy transition-all duration-200 hover:scale-105 px-3 py-2 rounded-md hover:bg-navy/5">
               Pricing
             </a>
 
             {/* Resources Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground-secondary hover:text-navy transition-colors">
+              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground-secondary hover:text-navy transition-all duration-200 hover:scale-105 px-3 py-2 rounded-md hover:bg-navy/5">
                 Resources
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background border border-card-border">
+              <DropdownMenuContent className="bg-background/95 backdrop-blur-md border border-card-border shadow-professional rounded-lg p-2 min-w-[200px]">
                 {resourceItems.map((item) => (
                   <DropdownMenuItem key={item.label} asChild>
-                    <a href={item.href} className="text-foreground-secondary hover:text-navy">
-                      {item.label}
+                    <a href={item.href} className="flex items-center px-3 py-2 rounded-md text-foreground-secondary hover:text-navy hover:bg-navy/10 transition-all duration-200 hover:scale-105 hover:translate-x-1 cursor-pointer group">
+                      <span className="group-hover:font-medium transition-all duration-200">{item.label}</span>
                     </a>
                   </DropdownMenuItem>
                 ))}
@@ -106,12 +106,12 @@ const Navigation = () => {
             <div className="space-y-4">
               {/* Products */}
               <div className="space-y-2">
-                <span className="block text-foreground font-medium">Products</span>
+                <span className="block text-foreground font-medium px-2">Products</span>
                 {productItems.map((item) => (
                   <a
                     key={item.label}
                     href={item.href}
-                    className="block pl-4 text-foreground-secondary hover:text-navy transition-colors"
+                    className="block px-4 py-2 ml-2 text-foreground-secondary hover:text-navy hover:bg-navy/10 rounded-md transition-all duration-200 hover:translate-x-1"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
@@ -122,7 +122,7 @@ const Navigation = () => {
               {/* Company */}
               <a
                 href="#company"
-                className="block text-foreground-secondary hover:text-navy transition-colors"
+                className="block px-2 py-2 text-foreground-secondary hover:text-navy hover:bg-navy/10 rounded-md transition-all duration-200 hover:translate-x-1"
                 onClick={() => setIsOpen(false)}
               >
                 Company
@@ -131,7 +131,7 @@ const Navigation = () => {
               {/* Pricing */}
               <a
                 href="#pricing"
-                className="block text-foreground-secondary hover:text-navy transition-colors"
+                className="block px-2 py-2 text-foreground-secondary hover:text-navy hover:bg-navy/10 rounded-md transition-all duration-200 hover:translate-x-1"
                 onClick={() => setIsOpen(false)}
               >
                 Pricing
@@ -139,12 +139,12 @@ const Navigation = () => {
 
               {/* Resources */}
               <div className="space-y-2">
-                <span className="block text-foreground font-medium">Resources</span>
+                <span className="block text-foreground font-medium px-2">Resources</span>
                 {resourceItems.map((item) => (
                   <a
                     key={item.label}
                     href={item.href}
-                    className="block pl-4 text-foreground-secondary hover:text-navy transition-colors"
+                    className="block px-4 py-2 ml-2 text-foreground-secondary hover:text-navy hover:bg-navy/10 rounded-md transition-all duration-200 hover:translate-x-1"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
