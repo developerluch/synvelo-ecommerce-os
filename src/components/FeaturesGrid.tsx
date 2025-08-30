@@ -83,7 +83,7 @@ const FeaturesGrid = () => {
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             Two Powerful Products,{" "}
-            <span className="text-gradient-electric">One Ecosystem</span>
+            <span className="text-gradient-navy">One Ecosystem</span>
           </h2>
           <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
             Whether you're scaling your Amazon business or running a 3PL operation, 
@@ -95,7 +95,7 @@ const FeaturesGrid = () => {
           {/* FBA Dashboard Section */}
           <div className="space-y-8 animate-slide-in-left">
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric/10 border border-electric/20 text-electric text-sm font-medium mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy/10 border border-navy/20 text-navy text-sm font-medium mb-4">
                 <BarChart3 className="w-4 h-4" />
                 Synvelo FBA Dashboard
               </div>
@@ -103,20 +103,20 @@ const FeaturesGrid = () => {
               <p className="text-foreground-secondary text-lg mb-6">
                 Replaces $500+ in monthly tools with one comprehensive platform
               </p>
-              <div className="text-2xl font-bold text-electric mb-6">$97/month</div>
+              <div className="text-2xl font-bold text-navy mb-6">$97/month</div>
             </div>
 
             <div className="grid gap-4">
               {fbaFeatures.map((feature, index) => (
-                <Card key={index} className="group hover:border-electric/30 transition-colors cursor-pointer">
+                <Card key={index} className="group hover:border-navy/30 transition-colors cursor-pointer">
                   <CardHeader className="pb-3">
                     <div className="flex items-start gap-4">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-electric/10 text-electric group-hover:bg-electric/20 transition-colors">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-navy/10 text-navy group-hover:bg-navy/20 transition-colors">
                         <feature.icon className="w-5 h-5" />
                       </div>
                       <div className="flex-1">
                         <CardTitle className="text-lg mb-1">{feature.title}</CardTitle>
-                        <div className="text-xs text-electric font-medium">{feature.metric}</div>
+                        <div className="text-xs text-navy font-medium">{feature.metric}</div>
                       </div>
                     </div>
                   </CardHeader>
@@ -138,7 +138,7 @@ const FeaturesGrid = () => {
           {/* 3PL Section */}
           <div className="space-y-8 animate-slide-in-left animation-delay-200">
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric/10 border border-electric/20 text-electric text-sm font-medium mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy/10 border border-navy/20 text-navy text-sm font-medium mb-4">
                 <Warehouse className="w-4 h-4" />
                 Synvelo 3PL
               </div>
@@ -146,20 +146,20 @@ const FeaturesGrid = () => {
               <p className="text-foreground-secondary text-lg mb-6">
                 Pay-as-you-go pricing with zero setup fees
               </p>
-              <div className="text-2xl font-bold text-electric mb-6">$0.50/order + storage</div>
+              <div className="text-2xl font-bold text-navy mb-6">$0.50/order + storage</div>
             </div>
 
             <div className="grid gap-4">
               {threePlFeatures.map((feature, index) => (
-                <Card key={index} className="group hover:border-electric/30 transition-colors cursor-pointer">
+                <Card key={index} className="group hover:border-navy/30 transition-colors cursor-pointer">
                   <CardHeader className="pb-3">
                     <div className="flex items-start gap-4">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-electric/10 text-electric group-hover:bg-electric/20 transition-colors">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-navy/10 text-navy group-hover:bg-navy/20 transition-colors">
                         <feature.icon className="w-5 h-5" />
                       </div>
                       <div className="flex-1">
                         <CardTitle className="text-lg mb-1">{feature.title}</CardTitle>
-                        <div className="text-xs text-electric font-medium">{feature.metric}</div>
+                        <div className="text-xs text-navy font-medium">{feature.metric}</div>
                       </div>
                     </div>
                   </CardHeader>
@@ -172,7 +172,7 @@ const FeaturesGrid = () => {
               ))}
             </div>
 
-            <Button variant="outline-electric" size="lg" className="group w-full lg:w-auto">
+            <Button variant="outline-navy" size="lg" className="group w-full lg:w-auto">
               Explore 3PL Solutions
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -182,8 +182,8 @@ const FeaturesGrid = () => {
         {/* 3D Warehouse Visualization */}
         <div className="mt-20 animate-scale-in animation-delay-400">
           <div className="relative">
-            <div className="absolute inset-0 bg-electric/10 rounded-3xl blur-3xl scale-105" />
-            <div className="relative bg-gradient-card rounded-3xl p-4 border border-electric/20">
+            <div className="absolute inset-0 bg-navy/10 rounded-3xl blur-3xl scale-105" />
+            <div className="relative bg-gradient-card rounded-3xl p-4 border border-navy/20">
               <img
                 src={warehouseImage}
                 alt="Modern 3PL warehouse with automation systems"

@@ -36,11 +36,11 @@ export default {
 					secondary: 'hsl(var(--foreground-secondary))',
 					muted: 'hsl(var(--foreground-muted))'
 				},
-				electric: {
-					DEFAULT: 'hsl(var(--electric))',
-					secondary: 'hsl(var(--electric-secondary))',
-					muted: 'hsl(var(--electric-muted))',
-					foreground: 'hsl(var(--electric-foreground))'
+				navy: {
+					DEFAULT: 'hsl(var(--navy))',
+					secondary: 'hsl(var(--navy-secondary))',
+					muted: 'hsl(var(--navy-muted))',
+					foreground: 'hsl(var(--navy-foreground))'
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -139,7 +139,7 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-electric': 'var(--gradient-electric)',
+				'gradient-navy': 'var(--gradient-navy)',
 				'gradient-card': 'var(--gradient-card)',
 				'gradient-hero': 'var(--gradient-hero)'
 			}

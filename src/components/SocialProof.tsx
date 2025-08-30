@@ -82,7 +82,7 @@ const SocialProof = () => {
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             See Your Potential{" "}
-            <span className="text-gradient-electric">ROI</span>
+            <span className="text-gradient-navy">ROI</span>
           </h2>
           <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
             Calculate how much time and money Synvelo can save your business
@@ -91,10 +91,10 @@ const SocialProof = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
           {/* ROI Calculator */}
-          <Card className="glass border-electric/20 animate-scale-in">
+          <Card className="glass border-navy/20 animate-scale-in">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
-                <Calculator className="w-6 h-6 text-electric" />
+                <Calculator className="w-6 h-6 text-navy" />
                 ROI Calculator
               </CardTitle>
             </CardHeader>
@@ -114,7 +114,7 @@ const SocialProof = () => {
                     onChange={(e) => setCurrentRevenue(Number(e.target.value))}
                     className="w-full h-2 bg-card-border rounded-lg appearance-none cursor-pointer slider"
                   />
-                  <div className="text-right text-lg font-bold text-electric mt-2">
+                  <div className="text-right text-lg font-bold text-navy mt-2">
                     ${currentRevenue.toLocaleString()}
                   </div>
                 </div>
@@ -135,26 +135,26 @@ const SocialProof = () => {
                     onChange={(e) => setCurrentTimeSpent(Number(e.target.value))}
                     className="w-full h-2 bg-card-border rounded-lg appearance-none cursor-pointer slider"
                   />
-                  <div className="text-right text-lg font-bold text-electric mt-2">
+                  <div className="text-right text-lg font-bold text-navy mt-2">
                     {currentTimeSpent} hours
                   </div>
                 </div>
               </div>
 
-              <div className="bg-electric/10 rounded-lg p-4 border border-electric/20">
-                <h4 className="font-semibold mb-3 text-electric">Your Potential Savings:</h4>
+              <div className="bg-navy/10 rounded-lg p-4 border border-navy/20">
+                <h4 className="font-semibold mb-3 text-navy">Your Potential Savings:</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span>Monthly Savings:</span>
-                    <span className="font-bold text-electric">${savings.monthlySavings.toLocaleString()}</span>
+                    <span className="font-bold text-navy">${savings.monthlySavings.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Annual Savings:</span>
-                    <span className="font-bold text-electric">${savings.annualSavings.toLocaleString()}</span>
+                    <span className="font-bold text-navy">${savings.annualSavings.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Time Saved (Weekly):</span>
-                    <span className="font-bold text-electric">{savings.timeSavedWeekly}+ hours</span>
+                    <span className="font-bold text-navy">{savings.timeSavedWeekly}+ hours</span>
                   </div>
                 </div>
               </div>
@@ -173,7 +173,7 @@ const SocialProof = () => {
               <div className="grid gap-3">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-electric flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-navy flex-shrink-0" />
                     <span className="text-foreground-secondary">{feature}</span>
                   </div>
                 ))}
@@ -208,11 +208,11 @@ const SocialProof = () => {
                     <span>Total Replaced:</span>
                     <span className="text-destructive">$348/mo</span>
                   </div>
-                  <div className="flex justify-between font-semibold text-electric">
+                  <div className="flex justify-between font-semibold text-navy">
                     <span>Synvelo Cost:</span>
                     <span>$97/mo</span>
                   </div>
-                  <div className="flex justify-between font-bold text-electric text-lg">
+                  <div className="flex justify-between font-bold text-navy text-lg">
                     <span>You Save:</span>
                     <span>$251/mo</span>
                   </div>
@@ -226,10 +226,10 @@ const SocialProof = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16 animate-fade-in-up animation-delay-300">
           {metrics.map((metric, index) => (
             <div key={index} className="text-center">
-              <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-electric/10 text-electric">
+              <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-navy/10 text-navy">
                 <metric.icon className="w-8 h-8" />
               </div>
-              <div className="text-3xl font-bold text-electric mb-2">{metric.value}</div>
+              <div className="text-3xl font-bold text-navy mb-2">{metric.value}</div>
               <div className="text-foreground-muted">{metric.label}</div>
             </div>
           ))}
@@ -238,11 +238,11 @@ const SocialProof = () => {
         {/* Testimonials */}
         <div className="grid lg:grid-cols-3 gap-8 animate-fade-in-up animation-delay-400">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="glass border-electric/20">
+            <Card key={index} className="glass border-navy/20">
               <CardHeader>
                 <div className="flex items-center gap-1 mb-2">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-electric text-electric" />
+                    <Star key={i} className="w-4 h-4 fill-navy text-navy" />
                   ))}
                 </div>
                 <CardTitle className="text-lg">{testimonial.name}</CardTitle>

@@ -18,7 +18,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-electric text-electric-foreground">
+            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-navy text-navy-foreground">
               <Zap className="w-5 h-5" />
             </div>
             <span className="text-xl font-bold">Synvelo</span>
@@ -30,7 +30,7 @@ const Navigation = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-foreground-secondary hover:text-electric transition-colors"
+                className="text-foreground-secondary hover:text-navy transition-colors"
               >
                 {item.label}
               </a>
@@ -64,7 +64,7 @@ const Navigation = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="block text-foreground-secondary hover:text-electric transition-colors"
+                  className="block text-foreground-secondary hover:text-navy transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}

@@ -34,9 +34,9 @@ const Footer = () => {
     <footer className="bg-background-secondary border-t border-card-border">
       <div className="container mx-auto px-6 py-16">
         {/* Newsletter Signup */}
-        <div className="bg-gradient-card rounded-2xl p-8 border border-electric/20 mb-16 text-center">
+        <div className="bg-gradient-card rounded-2xl p-8 border border-navy/20 mb-16 text-center">
           <h3 className="text-2xl font-bold mb-4">
-            Stay Updated with <span className="text-gradient-electric">Synvelo</span>
+            Stay Updated with <span className="text-gradient-navy">Synvelo</span>
           </h3>
           <p className="text-foreground-secondary mb-6 max-w-md mx-auto">
             Get the latest updates on new features, integrations, and ecommerce insights
@@ -45,7 +45,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-2 rounded-lg bg-background border border-card-border text-foreground placeholder-foreground-muted focus:outline-none focus:ring-2 focus:ring-electric"
+              className="flex-1 px-4 py-2 rounded-lg bg-background border border-card-border text-foreground placeholder-foreground-muted focus:outline-none focus:ring-2 focus:ring-navy"
             />
             <Button variant="hero">Subscribe</Button>
           </div>
@@ -56,7 +56,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-electric text-electric-foreground">
+              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-navy text-navy-foreground">
                 <Zap className="w-5 h-5" />
               </div>
               <span className="text-xl font-bold">Synvelo</span>
@@ -65,16 +65,16 @@ const Footer = () => {
               The operating system for modern ecommerce. Automate your Amazon FBA business and 3PL operations with cutting-edge technology.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-foreground-muted hover:text-electric transition-colors">
+              <a href="#" className="text-foreground-muted hover:text-navy transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-foreground-muted hover:text-electric transition-colors">
+              <a href="#" className="text-foreground-muted hover:text-navy transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-foreground-muted hover:text-electric transition-colors">
+              <a href="#" className="text-foreground-muted hover:text-navy transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="text-foreground-muted hover:text-electric transition-colors">
+              <a href="#" className="text-foreground-muted hover:text-navy transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
@@ -88,7 +88,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-foreground-muted hover:text-electric transition-colors"
+                    className="text-foreground-muted hover:text-navy transition-colors"
                   >
                     {link.label}
                   </a>
@@ -105,7 +105,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-foreground-muted hover:text-electric transition-colors"
+                    className="text-foreground-muted hover:text-navy transition-colors"
                   >
                     {link.label}
                   </a>
@@ -122,7 +122,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-foreground-muted hover:text-electric transition-colors"
+                    className="text-foreground-muted hover:text-navy transition-colors"
                   >
                     {link.label}
                   </a>
@@ -139,7 +139,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-foreground-muted hover:text-electric transition-colors"
+                    className="text-foreground-muted hover:text-navy transition-colors"
                   >
                     {link.label}
                   </a>
@@ -156,7 +156,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-6 text-sm text-foreground-muted">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-electric rounded-full animate-pulse-electric" />
+              <div className="w-2 h-2 bg-navy rounded-full animate-pulse-navy" />
               <span>All systems operational</span>
             </div>
             <span>SOC 2 Compliant</span>
