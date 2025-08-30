@@ -73,7 +73,7 @@ const FeaturesGrid = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,255,136,0.3) 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(220 50% 15% / 0.3) 1px, transparent 0)`,
           backgroundSize: '50px 50px'
         }} />
       </div>
