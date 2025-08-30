@@ -1,10 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, TrendingUp, Users, Zap } from "lucide-react";
+import { motion } from "framer-motion";
+import { BackgroundPaths } from "./BackgroundPaths";
 import dashboardHero from "@/assets/dashboard-hero.jpg";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Animated Background Paths */}
+      <BackgroundPaths />
+      
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-hero opacity-40" />
       
@@ -36,10 +41,24 @@ const Hero = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center animate-fade-in-up animation-delay-200">
-            <Button variant="hero" size="xl" className="group rounded-sm shadow-professional">
-              Start with FBA Dashboard
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <div className="inline-block group relative bg-gradient-to-b from-navy/10 to-white/10 p-px rounded-lg backdrop-blur-lg overflow-hidden shadow-professional hover:shadow-xl transition-shadow duration-300">
+              <motion.div
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              >
+                <Button 
+                  variant="hero" 
+                  size="xl" 
+                  className="group rounded-lg px-8 py-6 backdrop-blur-md bg-navy hover:bg-navy/90 text-white transition-all duration-300 border border-navy/20 hover:shadow-lg"
+                >
+                  <span className="opacity-90 group-hover:opacity-100 transition-opacity">
+                    Start with FBA Dashboard
+                  </span>
+                  <ArrowRight className="w-5 h-5 ml-2 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                </Button>
+              </motion.div>
+            </div>
             <Button variant="outline-navy" size="xl" className="group rounded-sm border-border/20">
               <Play className="w-5 h-5" />
               Watch Demo
