@@ -76,7 +76,8 @@
   
   body {
     @apply bg-background text-foreground font-space-grotesk;
-    background: var(--gradient-primary);
+    background: hsl(220 50% 8%);
+    background-attachment: fixed;
     min-height: 100vh;
   }
 

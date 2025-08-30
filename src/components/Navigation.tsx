@@ -13,8 +13,8 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-card-border">
-      <div className="container mx-auto px-6">
+    <nav className="fixed top-0 left-0 right-0 z-50">
+      <div className="container mx-auto px-6 pt-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-2">
@@ -58,7 +58,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-card-border">
+          <div className="md:hidden py-4">
             <div className="space-y-4">
               {navItems.map((item) => (
                 <a
