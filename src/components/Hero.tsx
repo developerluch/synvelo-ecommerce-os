@@ -25,7 +25,7 @@ const Hero = () => {
 
           {/* Main Headline */}
           <div className="space-y-6 animate-fade-in-up animation-delay-100">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
               The Next Generation of{" "}
               <span className="text-gradient-navy">eCommerce Automation</span>
             </h1>
