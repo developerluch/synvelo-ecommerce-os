@@ -25,22 +25,22 @@ const Hero = () => {
 
           {/* Main Headline */}
           <div className="space-y-6 animate-fade-in-up animation-delay-100">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] tracking-tighter">
               The Next Generation of{" "}
               <span className="text-gradient-navy">eCommerce Automation</span>
             </h1>
-            <p className="text-xl text-foreground-secondary leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-foreground-secondary leading-[1.6] max-w-2xl mx-auto font-normal">
               Automate your Amazon FBA business and 3PL operations with AI-powered tools that save 10+ hours weekly while scaling to millions in revenue.
             </p>
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-200">
-            <Button variant="hero" size="xl" className="group">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center animate-fade-in-up animation-delay-200">
+            <Button variant="hero" size="xl" className="group rounded-sm shadow-professional">
               Start with FBA Dashboard
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline-navy" size="xl" className="group">
+            <Button variant="outline-navy" size="xl" className="group rounded-sm border-border/20">
               <Play className="w-5 h-5" />
               Watch Demo
             </Button>

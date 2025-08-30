@@ -71,11 +71,12 @@ export default {
 					border: 'hsl(var(--card-border))'
 				}
 			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
-			},
+		borderRadius: {
+			lg: '6px',
+			md: '4px', 
+			sm: '2px',
+			professional: '3px'
+		},
 			keyframes: {
 				'accordion-down': {
 					from: { height: '0' },
