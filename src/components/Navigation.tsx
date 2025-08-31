@@ -7,6 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,6 +84,7 @@ const Navigation = () => {
 
           {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle />
             <Button variant="ghost" size="sm">
               Login
             </Button>
@@ -153,6 +155,10 @@ const Navigation = () => {
               </div>
 
               <div className="flex flex-col gap-2 pt-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-foreground-secondary">Theme</span>
+                  <ThemeToggle />
+                </div>
                 <Button variant="ghost" size="sm">
                   Login
                 </Button>

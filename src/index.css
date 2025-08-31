@@ -8,7 +8,74 @@
 
 @layer base {
   :root {
-    /* Core Black/Navy Theme Colors */
+    /* Light theme colors */
+    --background: 0 0% 100%;
+    --background-secondary: 220 14% 96%;
+    --background-tertiary: 220 13% 91%;
+    --foreground: 222 84% 5%;
+    --foreground-secondary: 215 16% 47%;
+    --foreground-muted: 215 20% 65%;
+
+    /* Navy Accents */
+    --navy: 220 70% 30%;
+    --navy-secondary: 220 60% 25%;
+    --navy-muted: 220 50% 20%;
+    --navy-foreground: 0 0% 100%;
+    
+    /* Glassmorphism tokens */
+    --glass-background: 255 255 255 / 0.8;
+    --glass-background-hover: 255 255 255 / 0.9;
+    --glass-border: 0 0 0 / 0.1;
+    --glass-border-hover: 0 0 0 / 0.2;
+
+    /* Card & Component Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 5%;
+    --card-border: 220 13% 91%;
+
+    /* Interactive States */
+    --primary: 220 70% 30%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 220 75% 35%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 84% 5%;
+    --secondary-hover: 220 13% 91%;
+
+    /* Accent Colors */
+    --accent: 220 14% 96%;
+    --accent-foreground: 222 84% 5%;
+    --accent-hover: 220 13% 91%;
+
+    /* Utility Colors */
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 16% 47%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 70% 30%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Professional Design Variables */
+    --radius: 0.25rem;
+    --radius-professional: 0.1875rem;
+    --glow-size: 8px;
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-professional: 0 1px 3px 0 hsl(var(--foreground) / 0.04);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 14% 96%));
+    --gradient-navy: linear-gradient(135deg, hsl(220 70% 30%), hsl(220 60% 25%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 96%));
+    --gradient-hero: radial-gradient(ellipse at top, hsl(220 70% 30% / 0.15), transparent 70%);
+
+    /* Animation Variables */
+    --animate-duration: 0.6s;
+    --animate-delay: 0.1s;
+  }
+
+  .dark {
+    /* Dark theme colors */
     --background: 0 0% 0%;
     --background-secondary: 220 50% 8%;
     --background-tertiary: 220 40% 12%;
@@ -56,22 +123,11 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Professional Design Variables */
-    --radius: 0.25rem;
-    --radius-professional: 0.1875rem;
-    --glow-size: 8px;
-    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    --shadow-professional: 0 1px 3px 0 hsl(var(--foreground) / 0.04);
-
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(0 0% 0%), hsl(220 50% 8%));
     --gradient-navy: linear-gradient(135deg, hsl(220 70% 30%), hsl(220 60% 25%));
     --gradient-card: linear-gradient(145deg, hsl(220 50% 8%), hsl(220 40% 12%));
     --gradient-hero: radial-gradient(ellipse at top, hsl(220 70% 30% / 0.15), transparent 70%);
-
-    /* Animation Variables */
-    --animate-duration: 0.6s;
-    --animate-delay: 0.1s;
   }
 }
 
