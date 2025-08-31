@@ -29,7 +29,7 @@ const Hero = () => {
           {/* Main Headline */}
           <div className="space-y-4 sm:space-y-6 animate-fade-in-up animation-delay-100">
             <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-[1.05] tracking-tighter text-foreground/95 px-2 sm:px-0">
-              <span className="word-reveal block sm:inline">The Next Generation of</span>{" "}
+              <span className="word-reveal block sm:inline">The next generation of eCommerce Automation</span>{" "}
               <div className="word-rotate text-shimmer inline-block mt-2 sm:mt-0">
                 <span>eCommerce Automation</span>
                 <span>Amazon FBA Tools</span>
