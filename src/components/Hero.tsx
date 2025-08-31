@@ -27,7 +27,7 @@ const Hero = () => {
 
           {/* Main Headline */}
           <div className="space-y-4 sm:space-y-6 animate-fade-in-up animation-delay-100">
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-[1.05] tracking-tighter text-foreground/95 px-2 sm:px-0">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.05] tracking-tighter text-foreground/95 px-2 sm:px-0 xl:text-8xl py-0">
               <span className="word-reveal block sm:inline">
                 <span className="text-sm sm:text-base md:text-lg lg:text-xl mx-0 my-0 px-[200px] xl:text-6xl">Experience the power of</span>
                 <br className="block sm:hidden" />
@@ -45,61 +45,10 @@ const Hero = () => {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up animation-delay-200 px-4 sm:px-0">
-            <div className="inline-block group relative bg-gradient-to-b from-navy/10 to-white/10 p-px rounded-lg backdrop-blur-lg overflow-hidden shadow-professional hover:shadow-xl transition-shadow duration-300">
-              <motion.div whileHover={{
-              y: -2
-            }} whileTap={{
-              scale: 0.98
-            }} transition={{
-              type: "spring",
-              stiffness: 400,
-              damping: 25
-            }}>
-                <Button variant="hero" size="xl" className="group rounded-lg px-6 sm:px-8 py-4 sm:py-6 backdrop-blur-md bg-white hover:bg-white/90 text-black transition-all duration-300 hover:shadow-lg text-sm sm:text-base w-full sm:w-auto">
-                  <span className="font-medium group-hover:opacity-100 transition-opacity">
-                    7 Day Free Trial
-                  </span>
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
-                </Button>
-              </motion.div>
-            </div>
-            <DemoModal trigger={<Button variant="outline-navy" size="xl" className="group rounded-sm px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base w-full sm:w-auto">
-                  <Play className="w-4 h-4 sm:w-5 sm:h-5" />
-                  Watch Demo
-                </Button>} />
-          </div>
+          
 
           {/* Trust Metrics */}
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 pt-6 sm:pt-8 animate-fade-in-up animation-delay-300 px-4 sm:px-0">
-            <div className="flex items-center gap-2 sm:gap-3">
-              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-navy/10 text-navy">
-                <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
-              </div>
-              <div>
-                <div className="text-xl sm:text-2xl font-bold text-navy hover-lift">400+</div>
-                <div className="text-xs sm:text-sm text-foreground-muted">Features</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-2 sm:gap-3">
-              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-navy/10 text-navy">
-                <Users className="w-4 h-4 sm:w-5 sm:h-5" />
-              </div>
-              <div>
-                <div className="text-xl sm:text-2xl font-bold text-navy hover-lift">15+</div>
-                <div className="text-xs sm:text-sm text-foreground-muted">Integrations</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-2 sm:gap-3">
-              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-navy/10 text-navy">
-                <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />
-              </div>
-              <div>
-                <div className="text-xl sm:text-2xl font-bold text-navy hover-lift">24/7</div>
-                <div className="text-xs sm:text-sm text-foreground-muted">Automation</div>
-              </div>
-            </div>
-          </div>
+          
 
         </div>
         
