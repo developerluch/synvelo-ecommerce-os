@@ -28,13 +28,20 @@ const Hero = () => {
           {/* Main Headline */}
           <div className="space-y-4 sm:space-y-6 animate-fade-in-up animation-delay-100">
             <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-[1.05] tracking-tighter text-foreground/95 px-2 sm:px-0">
-              <span className="word-reveal block sm:inline">Experience the power of <span className="text-navy font-medium">Synvelo</span></span>
+              <span className="word-reveal block sm:inline"><span className="text-navy font-medium">Synvelo</span> FBA Automation</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground-secondary/90 leading-[1.5] sm:leading-[1.6] max-w-xs sm:max-w-2xl lg:max-w-4xl mx-auto font-normal stagger-children px-4 sm:px-0">
               <span className="block sm:inline">Automate your Amazon FBA business and 3PL operations</span>
               
               <span className="block sm:inline"> while scaling to millions in revenue.</span>
             </p>
+            
+            {/* Experience power text moved to center */}
+            <div className="pt-8">
+              <p className="text-lg sm:text-xl md:text-2xl text-navy font-semibold animate-fade-in-up animation-delay-300">
+                Experience the power of complete automation
+              </p>
+            </div>
           </div>
 
           {/* CTAs */}
@@ -95,28 +102,30 @@ const Hero = () => {
           </div>
 
         </div>
+        
+        {/* Dashboard Preview with ContainerScroll - moved to center */}
+        <div className="mt-16 sm:mt-24">
+          <ContainerScroll
+            titleComponent={
+              <div className="mx-auto text-center mb-20">
+                <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+                  Built for <span className="text-navy">Scale</span>
+                </h2>
+                <p className="text-xl text-foreground-secondary max-w-2xl mx-auto">
+                  See how our platform transforms your Amazon FBA operations with real-time insights and automation.
+                </p>
+              </div>
+            }
+          >
+            <img
+              src={dashboardHero}
+              alt="Synvelo FBA Dashboard - Real-time analytics and automation"
+              className="mx-auto rounded-2xl object-cover h-full object-left-top"
+              draggable={false}
+            />
+          </ContainerScroll>
+        </div>
       </div>
-      
-      {/* Dashboard Preview with ContainerScroll */}
-      <ContainerScroll
-        titleComponent={
-          <div className="mx-auto text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Built for <span className="text-navy">Scale</span>
-            </h2>
-            <p className="text-xl text-foreground-secondary max-w-2xl mx-auto">
-              See how our platform transforms your Amazon FBA operations with real-time insights and automation.
-            </p>
-          </div>
-        }
-      >
-        <img
-          src={dashboardHero}
-          alt="Synvelo FBA Dashboard - Real-time analytics and automation"
-          className="mx-auto rounded-2xl object-cover h-full object-left-top"
-          draggable={false}
-        />
-      </ContainerScroll>
     </section>;
 };
 export default Hero;

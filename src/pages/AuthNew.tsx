@@ -441,7 +441,7 @@ export default function AuthNew() {
 
   useEffect(() => {
     if (user) {
-      navigate('/');
+      navigate('/dashboard');
     }
   }, [user, navigate]);
 
