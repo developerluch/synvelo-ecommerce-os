@@ -205,7 +205,7 @@ const PricingSection = () => {
         </div>
 
         {/* Final CTA */}
-        <div className="text-center bg-glass backdrop-blur-lg rounded-2xl p-8">
+        <div className="text-center bg-card border border-card-border rounded-2xl p-8">
           <h3 className="text-2xl font-bold mb-4">
             Join 1,200+ Sellers Growing with Synvelo
           </h3>
