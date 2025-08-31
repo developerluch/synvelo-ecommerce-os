@@ -47,7 +47,7 @@ const Hero = () => {
                 <Button 
                   variant="hero" 
                   size="xl" 
-                  className="group rounded-lg px-8 py-6 backdrop-blur-md bg-black hover:bg-black/80 text-white transition-all duration-300 hover:shadow-lg"
+                  className="group rounded-lg px-8 py-6 backdrop-blur-md bg-white hover:bg-white/90 text-black transition-all duration-300 hover:shadow-lg"
                 >
                   <span className="opacity-90 group-hover:opacity-100 transition-opacity">
                     Start with FBA Dashboard
