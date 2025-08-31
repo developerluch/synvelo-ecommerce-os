@@ -38,9 +38,7 @@ const Hero = () => {
             
             {/* Experience power text moved to center */}
             <div className="pt-8">
-              <p className="text-lg sm:text-xl md:text-2xl text-navy font-semibold animate-fade-in-up animation-delay-300">
-                Experience the power of complete automation
-              </p>
+              
             </div>
           </div>
 
