@@ -1,16 +1,20 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Zap, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, User, LogOut } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, signOut } = useAuth();
 
   const productItems = [
     { label: "Features", href: "/features" },
@@ -105,12 +109,38 @@ const Navigation = () => {
           {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
-            <Button variant="ghost" size="sm">
-              Login
-            </Button>
-            <Button variant="hero" size="sm" className="bg-black hover:bg-black/80 text-white">
-              Start Free Trial
-            </Button>
+            {user ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="sm" className="flex items-center gap-2">
+                    <User className="w-4 h-4" />
+                    {user.email}
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="bg-background/95 backdrop-blur-md">
+                  <DropdownMenuItem asChild>
+                    <Link to="/profile" className="flex items-center gap-2">
+                      <User className="w-4 h-4" />
+                      Profile
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={signOut} className="flex items-center gap-2 text-destructive">
+                    <LogOut className="w-4 h-4" />
+                    Sign Out
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <>
+                <Button variant="ghost" size="sm" asChild>
+                  <Link to="/auth">Login</Link>
+                </Button>
+                <Button variant="hero" size="sm" className="bg-black hover:bg-black/80 text-white" asChild>
+                  <Link to="/auth">Start Free Trial</Link>
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -179,12 +209,27 @@ const Navigation = () => {
                   <span className="text-foreground-secondary">Theme</span>
                   <ThemeToggle />
                 </div>
-                <Button variant="ghost" size="sm">
-                  Login
-                </Button>
-                <Button variant="hero" size="sm" className="bg-black hover:bg-black/80 text-white">
-                  Start Free Trial
-                </Button>
+                {user ? (
+                  <>
+                    <div className="flex items-center gap-2 px-2 py-2 text-foreground-secondary">
+                      <User className="w-4 h-4" />
+                      {user.email}
+                    </div>
+                    <Button variant="ghost" size="sm" onClick={signOut} className="justify-start">
+                      <LogOut className="w-4 h-4 mr-2" />
+                      Sign Out
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Button variant="ghost" size="sm" asChild>
+                      <Link to="/auth">Login</Link>
+                    </Button>
+                    <Button variant="hero" size="sm" className="bg-black hover:bg-black/80 text-white" asChild>
+                      <Link to="/auth">Start Free Trial</Link>
+                    </Button>
+                  </>
+                )}
               </div>
             </div>
           </div>
