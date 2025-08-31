@@ -20,7 +20,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 py-32 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-12">
           {/* Trust Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy/10 border border-navy/20 text-navy text-sm font-medium animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy/10 text-navy text-sm font-medium animate-fade-in-up">
             <TrendingUp className="w-4 h-4" />
             Powering $50M+ in Amazon Sales
           </div>
@@ -47,7 +47,7 @@ const Hero = () => {
                 <Button 
                   variant="hero" 
                   size="xl" 
-                  className="group rounded-lg px-8 py-6 backdrop-blur-md bg-navy hover:bg-navy/90 text-white transition-all duration-300 border border-navy/20 hover:shadow-lg"
+                  className="group rounded-lg px-8 py-6 backdrop-blur-md bg-navy hover:bg-navy/90 text-white transition-all duration-300 hover:shadow-lg"
                 >
                   <span className="opacity-90 group-hover:opacity-100 transition-opacity">
                     Start with FBA Dashboard
@@ -58,7 +58,7 @@ const Hero = () => {
             </div>
             <DemoModal 
               trigger={
-                <Button variant="outline-navy" size="xl" className="group rounded-sm border-border/20">
+                <Button variant="outline-navy" size="xl" className="group rounded-sm">
                   <Play className="w-5 h-5" />
                   Watch Demo
                 </Button>
@@ -104,7 +104,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-navy/10 rounded-2xl blur-3xl scale-105" />
               
               {/* Dashboard Image */}
-              <div className="relative bg-gradient-card rounded-2xl p-3 border border-navy/20">
+              <div className="relative bg-gradient-card rounded-2xl p-3">
                 <img
                   src={dashboardHero}
                   alt="Synvelo FBA Dashboard - Real-time analytics and automation"
@@ -112,12 +112,12 @@ const Hero = () => {
                 />
                 
                 {/* Floating Metrics */}
-                <div className="absolute top-8 left-8 bg-glass backdrop-blur-lg rounded-lg p-3 border border-glass-border">
+                <div className="absolute top-8 left-8 bg-glass backdrop-blur-lg rounded-lg p-3">
                   <div className="text-xs text-foreground-muted">Revenue Today</div>
                   <div className="text-lg font-bold text-navy">$24,847</div>
                 </div>
                 
-                <div className="absolute bottom-8 right-8 bg-glass backdrop-blur-lg rounded-lg p-3 border border-glass-border">
+                <div className="absolute bottom-8 right-8 bg-glass backdrop-blur-lg rounded-lg p-3">
                   <div className="text-xs text-foreground-muted">Active Automations</div>
                   <div className="text-lg font-bold text-navy">8</div>
                 </div>

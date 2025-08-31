@@ -104,7 +104,7 @@ const PricingSection = () => {
           </p>
           
           {/* Savings Banner */}
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-navy/10 border border-navy/20 rounded-full text-navy font-semibold mb-8">
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-navy/10 rounded-full text-navy font-semibold mb-8">
             <Star className="w-5 h-5" />
             Limited Time: Save 50% on your first 3 months
           </div>
@@ -115,7 +115,7 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <Card 
               key={index} 
-              className={`relative bg-glass backdrop-blur-lg border-glass-border hover:border-glass-border-hover hover:bg-glass-hover transition-all duration-300 ${
+              className={`relative bg-glass backdrop-blur-lg hover:bg-glass-hover transition-all duration-300 ${
                 plan.popular ? 'ring-2 ring-navy/50 scale-105' : ''
               }`}
             >
@@ -205,7 +205,7 @@ const PricingSection = () => {
         </div>
 
         {/* Final CTA */}
-        <div className="text-center bg-glass backdrop-blur-lg rounded-2xl p-8 border border-glass-border">
+        <div className="text-center bg-glass backdrop-blur-lg rounded-2xl p-8">
           <h3 className="text-2xl font-bold mb-4">
             Join 1,200+ Sellers Growing with Synvelo
           </h3>

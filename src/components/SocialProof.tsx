@@ -100,7 +100,7 @@ const SocialProof = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
           {/* ROI Calculator */}
-          <Card className="bg-glass backdrop-blur-lg border-glass-border animate-scale-in">
+          <Card className="bg-glass backdrop-blur-lg animate-scale-in">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
                 <Calculator className="w-6 h-6 text-navy" />
@@ -150,7 +150,7 @@ const SocialProof = () => {
                 </div>
               </div>
 
-              <div className="bg-navy/10 rounded-lg p-4 border border-navy/20">
+              <div className="bg-navy/10 rounded-lg p-4">
                 <h4 className="font-semibold mb-3 text-navy">Your Potential Savings:</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
@@ -189,7 +189,7 @@ const SocialProof = () => {
               </div>
             </div>
 
-            <div className="bg-glass backdrop-blur-md border-glass-border rounded-lg p-6">
+            <div className="bg-glass backdrop-blur-md rounded-lg p-6">
               <h4 className="font-semibold mb-4">Replaces These Expensive Tools:</h4>
               <div className="space-y-2 text-sm text-foreground-muted">
                 <div className="flex justify-between">
@@ -251,7 +251,7 @@ const SocialProof = () => {
           </h3>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
             {companyLogos.map((company, index) => (
-              <div key={index} className="flex items-center justify-center w-16 h-16 bg-glass backdrop-blur-lg rounded-lg border border-glass-border hover:border-glass-border-hover hover:opacity-80 transition-all duration-300">
+              <div key={index} className="flex items-center justify-center w-16 h-16 bg-glass backdrop-blur-lg rounded-lg hover:opacity-80 transition-all duration-300">
                 <span className="font-bold text-navy text-sm">{company.logo}</span>
               </div>
             ))}
@@ -261,7 +261,7 @@ const SocialProof = () => {
         {/* Testimonials */}
         <div className="grid lg:grid-cols-3 gap-8 animate-fade-in-up animation-delay-400">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-glass backdrop-blur-lg border-glass-border hover:border-glass-border-hover hover:bg-glass-hover transition-all duration-300 group">
+            <Card key={index} className="bg-glass backdrop-blur-lg hover:bg-glass-hover transition-all duration-300 group">
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-1">

@@ -23,7 +23,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-glass backdrop-blur-lg border-b border-glass-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-glass backdrop-blur-lg">
       <div className="container mx-auto px-6 pt-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -42,7 +42,7 @@ const Navigation = () => {
                 Products
                 <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background/95 backdrop-blur-md border border-card-border shadow-professional rounded-lg p-2 min-w-[200px]">
+              <DropdownMenuContent className="bg-background/95 backdrop-blur-md shadow-professional rounded-lg p-2 min-w-[200px]">
                 {productItems.map((item) => (
                   <DropdownMenuItem key={item.label} asChild>
                     <a href={item.href} className="flex items-center px-3 py-2 rounded-md text-foreground-secondary hover:text-navy hover:bg-navy/10 transition-all duration-200 hover:scale-105 hover:translate-x-1 cursor-pointer group">
@@ -69,7 +69,7 @@ const Navigation = () => {
                 Resources
                 <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background/95 backdrop-blur-md border border-card-border shadow-professional rounded-lg p-2 min-w-[200px]">
+              <DropdownMenuContent className="bg-background/95 backdrop-blur-md shadow-professional rounded-lg p-2 min-w-[200px]">
                 {resourceItems.map((item) => (
                   <DropdownMenuItem key={item.label} asChild>
                     <a href={item.href} className="flex items-center px-3 py-2 rounded-md text-foreground-secondary hover:text-navy hover:bg-navy/10 transition-all duration-200 hover:scale-105 hover:translate-x-1 cursor-pointer group">

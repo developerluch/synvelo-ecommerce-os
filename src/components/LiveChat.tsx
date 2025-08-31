@@ -29,7 +29,7 @@ const LiveChat = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 h-96 bg-glass backdrop-blur-xl border border-glass-border rounded-lg shadow-professional z-50 animate-scale-in">
+        <div className="fixed bottom-24 right-6 w-80 h-96 bg-glass backdrop-blur-xl rounded-lg shadow-professional z-50 animate-scale-in">
           <div className="flex flex-col h-full">
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-card-border bg-navy/5 rounded-t-lg">

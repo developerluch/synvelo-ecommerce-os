@@ -111,7 +111,7 @@ const FeaturesGrid = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy/10 border border-navy/20 text-navy text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy/10 text-navy text-sm font-medium mb-6">
             <BarChart3 className="w-4 h-4" />
             Synvelo FBA Dashboard
           </div>
@@ -165,7 +165,7 @@ const FeaturesGrid = () => {
           <h3 className="text-3xl font-bold text-center mb-12">Core Platform Features</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {coreFeatures.map((feature, index) => (
-              <Card key={index} className="group bg-glass backdrop-blur-md border-glass-border hover:border-glass-border-hover hover:bg-glass-hover transition-all duration-300 hover:shadow-lg">
+              <Card key={index} className="group bg-glass backdrop-blur-md hover:bg-glass-hover transition-all duration-300 hover:shadow-lg">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-3">
                     <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-navy/10 text-navy group-hover:bg-navy/20 transition-colors">
@@ -207,7 +207,7 @@ const FeaturesGrid = () => {
             <TabsContent value="automation" className="space-y-8">
               <div className="grid md:grid-cols-2 gap-8">
                 {automationFeatures.map((feature, index) => (
-                  <Card key={index} className="p-6 bg-glass backdrop-blur-md border-glass-border hover:border-glass-border-hover hover:bg-glass-hover transition-all duration-300">
+                  <Card key={index} className="p-6 bg-glass backdrop-blur-md hover:bg-glass-hover transition-all duration-300">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-navy/10 text-navy">
                         <feature.icon className="w-6 h-6" />
@@ -233,7 +233,7 @@ const FeaturesGrid = () => {
             <TabsContent value="analytics" className="space-y-8">
               <div className="grid md:grid-cols-3 gap-6">
                 {analyticsFeatures.map((category, index) => (
-                  <Card key={index} className="p-6 bg-glass backdrop-blur-md border-glass-border hover:border-glass-border-hover hover:bg-glass-hover transition-all duration-300">
+                  <Card key={index} className="p-6 bg-glass backdrop-blur-md hover:bg-glass-hover transition-all duration-300">
                     <h4 className="text-xl font-semibold mb-4">{category.title}</h4>
                     <div className="space-y-2">
                       {category.metrics.map((metric, idx) => (
@@ -251,7 +251,7 @@ const FeaturesGrid = () => {
             <TabsContent value="integrations" className="space-y-8">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {integrations.map((integration, index) => (
-                  <Card key={index} className="p-4 text-center bg-glass backdrop-blur-md border-glass-border hover:border-glass-border-hover hover:bg-glass-hover transition-all duration-300">
+                  <Card key={index} className="p-4 text-center bg-glass backdrop-blur-md hover:bg-glass-hover transition-all duration-300">
                     <div className="font-semibold text-navy">{integration.name}</div>
                     <div className="text-sm text-foreground-muted">{integration.type}</div>
                   </Card>
@@ -261,17 +261,17 @@ const FeaturesGrid = () => {
             
             <TabsContent value="enterprise" className="space-y-8">
               <div className="grid md:grid-cols-3 gap-6">
-                <Card className="p-6 text-center bg-glass backdrop-blur-md border-glass-border hover:border-glass-border-hover hover:bg-glass-hover transition-all duration-300">
+                <Card className="p-6 text-center bg-glass backdrop-blur-md hover:bg-glass-hover transition-all duration-300">
                   <Shield className="w-12 h-12 text-navy mx-auto mb-4" />
                   <h4 className="text-xl font-semibold mb-2">Security & Compliance</h4>
                   <p className="text-foreground-secondary text-sm">GDPR compliant, encrypted data, 2FA, audit logs</p>
                 </Card>
-                <Card className="p-6 text-center bg-glass backdrop-blur-md border-glass-border hover:border-glass-border-hover hover:bg-glass-hover transition-all duration-300">
+                <Card className="p-6 text-center bg-glass backdrop-blur-md hover:bg-glass-hover transition-all duration-300">
                   <Cloud className="w-12 h-12 text-navy mx-auto mb-4" />
                   <h4 className="text-xl font-semibold mb-2">Scalable Infrastructure</h4>
                   <p className="text-foreground-secondary text-sm">Docker, Kubernetes, Redis caching, 99.9% uptime</p>
                 </Card>
-                <Card className="p-6 text-center bg-glass backdrop-blur-md border-glass-border hover:border-glass-border-hover hover:bg-glass-hover transition-all duration-300">
+                <Card className="p-6 text-center bg-glass backdrop-blur-md hover:bg-glass-hover transition-all duration-300">
                   <Code className="w-12 h-12 text-navy mx-auto mb-4" />
                   <h4 className="text-xl font-semibold mb-2">Developer Platform</h4>
                   <p className="text-foreground-secondary text-sm">RESTful API, GraphQL, webhooks, SDK libraries</p>
@@ -282,7 +282,7 @@ const FeaturesGrid = () => {
         </div>
 
         {/* Pricing CTA */}
-        <div className="text-center bg-glass backdrop-blur-lg rounded-3xl p-12 border border-glass-border">
+        <div className="text-center bg-glass backdrop-blur-lg rounded-3xl p-12">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-bold mb-4">Ready to Scale Your Amazon Business?</h3>
             <p className="text-xl text-foreground-secondary mb-8">

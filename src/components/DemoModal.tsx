@@ -15,7 +15,7 @@ const DemoModal = ({ trigger }: DemoModalProps) => {
       <DialogTrigger asChild>
         {trigger}
       </DialogTrigger>
-      <DialogContent className="max-w-4xl w-full bg-background border border-glass-border">
+      <DialogContent className="max-w-4xl w-full bg-background">
         <button
           onClick={() => setIsOpen(false)}
           className="absolute right-4 top-4 p-2 rounded-lg hover:bg-glass-hover transition-colors z-10"
@@ -45,7 +45,7 @@ const DemoModal = ({ trigger }: DemoModalProps) => {
 
           {/* Demo Options */}
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6 bg-glass backdrop-blur-lg rounded-xl border border-glass-border hover:border-glass-border-hover hover:bg-glass-hover transition-all duration-300 group">
+            <div className="text-center p-6 bg-glass backdrop-blur-lg rounded-xl hover:bg-glass-hover transition-all duration-300 group">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-navy/10 text-navy rounded-lg mb-4 group-hover:bg-navy/20 transition-colors">
                 <Play className="w-6 h-6" />
               </div>
@@ -58,7 +58,7 @@ const DemoModal = ({ trigger }: DemoModalProps) => {
               </Button>
             </div>
 
-            <div className="text-center p-6 bg-glass backdrop-blur-lg rounded-xl border border-glass-border hover:border-glass-border-hover hover:bg-glass-hover transition-all duration-300 group">
+            <div className="text-center p-6 bg-glass backdrop-blur-lg rounded-xl hover:bg-glass-hover transition-all duration-300 group">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-navy/10 text-navy rounded-lg mb-4 group-hover:bg-navy/20 transition-colors">
                 <Calendar className="w-6 h-6" />
               </div>
@@ -71,7 +71,7 @@ const DemoModal = ({ trigger }: DemoModalProps) => {
               </Button>
             </div>
 
-            <div className="text-center p-6 bg-glass backdrop-blur-lg rounded-xl border border-glass-border hover:border-glass-border-hover hover:bg-glass-hover transition-all duration-300 group">
+            <div className="text-center p-6 bg-glass backdrop-blur-lg rounded-xl hover:bg-glass-hover transition-all duration-300 group">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-navy/10 text-navy rounded-lg mb-4 group-hover:bg-navy/20 transition-colors">
                 <Users className="w-6 h-6" />
               </div>
@@ -86,7 +86,7 @@ const DemoModal = ({ trigger }: DemoModalProps) => {
           </div>
 
           {/* Next Demo Times */}
-          <div className="mt-8 text-center p-4 bg-navy/10 rounded-lg border border-navy/20">
+          <div className="mt-8 text-center p-4 bg-navy/10 rounded-lg">
             <div className="flex items-center justify-center gap-2 mb-2">
               <Clock className="w-4 h-4 text-navy" />
               <span className="text-sm font-medium text-navy">Next Live Demo Sessions</span>
