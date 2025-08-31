@@ -110,44 +110,16 @@ const FeaturesGrid = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="xl" className="group bg-black hover:bg-black/80 text-white">
-              Start Free Trial
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <DemoModal trigger={<Button variant="outline-navy" size="xl" className="group">
-                  Watch Demo
-                  <Eye className="w-5 h-5" />
-                </Button>} />
+            
+            
           </div>
         </div>
 
         {/* Core Features Grid */}
         <div className="mb-20">
-          <h3 className="text-3xl font-bold text-center mb-12">Core Platform Features</h3>
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {coreFeatures.map((feature, index) => <Card key={index} className="group bg-glass backdrop-blur-md hover:bg-glass-hover transition-all duration-300 hover:shadow-lg">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-navy/10 text-navy group-hover:bg-navy/20 transition-colors">
-                      <feature.icon className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <CardTitle className="text-lg">{feature.title}</CardTitle>
-                    </div>
-                  </div>
-                  <CardDescription className="text-foreground-secondary leading-relaxed">
-                    {feature.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {feature.features.map((item, idx) => <div key={idx} className="flex items-center gap-2 text-sm text-foreground-muted">
-                        <CheckCircle className="w-4 h-4 text-navy" />
-                        {item}
-                      </div>)}
-                  </div>
-                </CardContent>
-              </Card>)}
+            {coreFeatures.map((feature, index) => {})}
           </div>
         </div>
 
