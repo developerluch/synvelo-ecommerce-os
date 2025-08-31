@@ -6,8 +6,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { BackgroundPaths } from '@/components/BackgroundPaths';
+import { ContainerScroll } from '@/components/ContainerScroll';
 import { useAuth } from '@/contexts/AuthContext';
-import { Chrome, MessageCircle, ArrowLeft } from 'lucide-react';
+import { Chrome, MessageCircle, ArrowLeft, Sparkles, Shield, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -56,118 +58,164 @@ const Auth = () => {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen p-4">
-        <div className="w-full max-w-md space-y-6">
-          {/* Back to Home Button */}
+      <div className="relative z-10">
+        {/* Back to Home Button */}
+        <div className="absolute top-6 left-6 z-20">
           <Button
             variant="ghost"
             onClick={() => navigate('/')}
-            className="mb-4 text-foreground-secondary hover:text-foreground"
+            className="text-white/80 hover:text-white transition-colors bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
           </Button>
-
-          <Card className="glass border border-glass-border">
-            <CardHeader className="space-y-1">
-              <CardTitle className="text-2xl font-bold text-center text-gradient-navy">
-                {isSignUp ? 'Create Account' : 'Welcome Back'}
-              </CardTitle>
-              <CardDescription className="text-center text-foreground-secondary">
-                {isSignUp 
-                  ? 'Sign up to get started with Synvelo' 
-                  : 'Sign in to your account to continue'
-                }
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {/* OAuth Providers */}
-              <div className="space-y-3">
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={() => handleOAuthSignIn('google')}
-                  disabled={loading}
-                  className="w-full bg-card/50 border-border hover:bg-card/70 transition-all"
-                >
-                  <Chrome className="mr-2 h-4 w-4" />
-                  Continue with Google
-                </Button>
-                
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={() => handleOAuthSignIn('discord')}
-                  disabled={loading}
-                  className="w-full bg-card/50 border-border hover:bg-card/70 transition-all"
-                >
-                  <MessageCircle className="mr-2 h-4 w-4" />
-                  Continue with Discord
-                </Button>
-              </div>
-
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <Separator className="w-full" />
-                </div>
-                <div className="relative flex justify-center text-xs uppercase">
-                  <span className="bg-card px-2 text-foreground-muted">Or continue with email</span>
-                </div>
-              </div>
-
-              {/* Email/Password Form */}
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="bg-background/50 border-border"
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="password">Password</Label>
-                  <Input
-                    id="password"
-                    type="password"
-                    placeholder="Enter your password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                    className="bg-background/50 border-border"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full bg-primary hover:bg-primary-hover text-primary-foreground"
-                >
-                  {loading ? 'Loading...' : (isSignUp ? 'Create Account' : 'Sign In')}
-                </Button>
-              </form>
-
-              {/* Toggle Sign Up/Sign In */}
-              <div className="text-center">
-                <button
-                  type="button"
-                  onClick={() => setIsSignUp(!isSignUp)}
-                  className="text-sm text-foreground-secondary hover:text-foreground transition-colors"
-                >
-                  {isSignUp 
-                    ? "Already have an account? Sign in" 
-                    : "Don't have an account? Sign up"
-                  }
-                </button>
-              </div>
-            </CardContent>
-          </Card>
         </div>
+
+        <ContainerScroll
+          titleComponent={
+            <div className="text-center mb-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+                  {isSignUp ? 'Join the Future' : 'Welcome Back'}
+                </h1>
+                <p className="text-xl text-white/80 max-w-2xl mx-auto">
+                  {isSignUp 
+                    ? 'Start your eCommerce automation journey today' 
+                    : 'Continue your automation journey'
+                  }
+                </p>
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center gap-8 mt-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                <div className="flex items-center text-white/70">
+                  <Shield className="mr-2 h-5 w-5" />
+                  <span>Secure</span>
+                </div>
+                <div className="flex items-center text-white/70">
+                  <Zap className="mr-2 h-5 w-5" />
+                  <span>Fast</span>
+                </div>
+                <div className="flex items-center text-white/70">
+                  <Sparkles className="mr-2 h-5 w-5" />
+                  <span>Powerful</span>
+                </div>
+              </motion.div>
+            </div>
+          }
+        >
+          <div className="flex items-center justify-center h-full p-8">
+            <Card className="bg-card/95 border-card-border backdrop-blur-sm shadow-2xl max-w-md w-full">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl font-bold">
+                  {isSignUp ? 'Create Account' : 'Sign In'}
+                </CardTitle>
+                <CardDescription>
+                  {isSignUp 
+                    ? 'Get started with your free account' 
+                    : 'Access your dashboard'
+                  }
+                </CardDescription>
+              </CardHeader>
+              
+              <CardContent className="space-y-4">
+                {/* OAuth Providers */}
+                <div className="grid grid-cols-2 gap-4">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => handleOAuthSignIn('google')}
+                    disabled={loading}
+                    className="w-full bg-background/50 border-border hover:bg-background/70 transition-all"
+                  >
+                    <Chrome className="mr-2 h-4 w-4" />
+                    Google
+                  </Button>
+                  
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => handleOAuthSignIn('discord')}
+                    disabled={loading}
+                    className="w-full bg-background/50 border-border hover:bg-background/70 transition-all"
+                  >
+                    <MessageCircle className="mr-2 h-4 w-4" />
+                    Discord
+                  </Button>
+                </div>
+                
+                <div className="relative">
+                  <div className="absolute inset-0 flex items-center">
+                    <Separator className="w-full" />
+                  </div>
+                  <div className="relative flex justify-center text-xs uppercase">
+                    <span className="bg-card px-2 text-muted-foreground">Or with email</span>
+                  </div>
+                </div>
+                
+                {/* Email/Password Form */}
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Enter your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      className="bg-background/50 border-border"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="password">Password</Label>
+                    <Input
+                      id="password"
+                      type="password"
+                      placeholder="Enter your password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                      className="bg-background/50 border-border"
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit" 
+                    className="w-full" 
+                    disabled={loading}
+                  >
+                    {loading ? 'Please wait...' : (isSignUp ? 'Create Account' : 'Sign In')}
+                  </Button>
+                </form>
+                
+                {/* Toggle between Sign In/Sign Up */}
+                <div className="text-center">
+                  <Button
+                    type="button"
+                    variant="link"
+                    onClick={() => setIsSignUp(!isSignUp)}
+                    className="text-sm text-muted-foreground hover:text-foreground"
+                  >
+                    {isSignUp 
+                      ? 'Already have an account? Sign in' 
+                      : "Don't have an account? Sign up"
+                    }
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </ContainerScroll>
       </div>
     </div>
   );

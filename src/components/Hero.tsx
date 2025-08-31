@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, TrendingUp, Users, Zap } from "lucide-react";
 import { motion } from "framer-motion";
+import { ContainerScroll } from "@/components/ContainerScroll";
 import dashboardHero from "@/assets/dashboard-hero.jpg";
 import DemoModal from "@/components/DemoModal";
 
@@ -104,32 +105,56 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Dashboard Preview Below */}
-          <div className="pt-12 sm:pt-16 animate-scale-in animation-delay-400 px-4 sm:px-0">
-            <div className="relative max-w-sm sm:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
-              {/* Subtle Glow Effect */}
-              <div className="absolute inset-0 bg-navy/10 rounded-xl sm:rounded-2xl blur-2xl sm:blur-3xl scale-105" />
-              
-              {/* Dashboard Image */}
-              <div className="relative bg-gradient-card rounded-xl sm:rounded-2xl p-2 sm:p-3">
+          {/* Interactive Scroll Dashboard */}
+          <div className="pt-12 sm:pt-16">
+            <ContainerScroll
+              titleComponent={
+                <div className="text-center mb-8">
+                  <h3 className="text-xl md:text-2xl font-semibold text-navy/90 mb-2">
+                    Experience the Power
+                  </h3>
+                  <p className="text-foreground-secondary max-w-2xl mx-auto">
+                    Scroll to see your future dashboard come to life
+                  </p>
+                </div>
+              }
+            >
+              <div className="relative h-full w-full">
                 <img
                   src={dashboardHero}
-                  alt="Synvelo FBA Dashboard - Real-time analytics and automation"
-                  className="w-full h-auto rounded-lg sm:rounded-xl shadow-xl sm:shadow-2xl"
+                  alt="Interactive Dashboard Preview"
+                  className="w-full h-full object-cover rounded-lg"
                 />
                 
-                {/* Floating Metrics */}
-                <div className="absolute top-4 sm:top-8 left-4 sm:left-8 bg-glass backdrop-blur-lg rounded-md sm:rounded-lg p-2 sm:p-3">
-                  <div className="text-xs text-foreground-muted">Revenue Today</div>
-                  <div className="text-sm sm:text-lg font-bold text-navy">$24,847</div>
-                </div>
+                {/* Floating Metrics with enhanced styling */}
+                <motion.div 
+                  className="absolute top-6 left-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 text-white shadow-lg"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="text-2xl font-bold">$24,847</div>
+                  <div className="text-sm opacity-80">Revenue Today</div>
+                </motion.div>
                 
-                <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 bg-glass backdrop-blur-lg rounded-md sm:rounded-lg p-2 sm:p-3">
-                  <div className="text-xs text-foreground-muted">Active Automations</div>
-                  <div className="text-sm sm:text-lg font-bold text-navy">8</div>
-                </div>
+                <motion.div 
+                  className="absolute top-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 text-white shadow-lg"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="text-2xl font-bold text-green-400">+23%</div>
+                  <div className="text-sm opacity-80">Growth Rate</div>
+                </motion.div>
+                
+                <motion.div 
+                  className="absolute bottom-6 left-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 text-white shadow-lg"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="text-2xl font-bold">8</div>
+                  <div className="text-sm opacity-80">Active Automations</div>
+                </motion.div>
               </div>
-            </div>
+            </ContainerScroll>
           </div>
         </div>
       </div>
