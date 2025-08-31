@@ -49,8 +49,8 @@ const Hero = () => {
                   size="xl" 
                   className="group rounded-lg px-8 py-6 backdrop-blur-md bg-white hover:bg-white/90 text-black transition-all duration-300 hover:shadow-lg"
                 >
-                  <span className="opacity-90 group-hover:opacity-100 transition-opacity">
-                    Start with FBA Dashboard
+                  <span className="font-medium group-hover:opacity-100 transition-opacity">
+                    7 Day Free Trial
                   </span>
                   <ArrowRight className="w-5 h-5 ml-2 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
                 </Button>
