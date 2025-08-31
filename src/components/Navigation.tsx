@@ -37,7 +37,7 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center justify-center gap-6">
             {/* Products Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 text-foreground-secondary hover:text-navy transition-all duration-200 hover:scale-105 px-3 py-2 rounded-md hover:bg-glass-hover backdrop-blur-sm font-semibold">
