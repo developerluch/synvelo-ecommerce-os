@@ -15,7 +15,7 @@ import {
   useInView,
   useMotionTemplate,
   useMotionValue,
-} from 'motion/react';
+} from 'framer-motion';
 import { Eye, EyeOff, Github, Chrome } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useAuth } from '@/contexts/AuthContext';
