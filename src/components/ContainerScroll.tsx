@@ -22,7 +22,11 @@ export const ContainerScroll = ({
 export const Header = ({
   titleComponent
 }: any) => {
-  return;
+  return (
+    <div className="text-center mb-8">
+      {titleComponent}
+    </div>
+  );
 };
 export const Card = ({
   children
