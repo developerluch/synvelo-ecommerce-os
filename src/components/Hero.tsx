@@ -29,7 +29,7 @@ const Hero = () => {
           <div className="space-y-4 sm:space-y-6 animate-fade-in-up animation-delay-100">
             <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-[1.05] tracking-tighter text-foreground/95 px-2 sm:px-0">
               <span className="word-reveal block sm:inline">
-                <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">Experience the power of</span>
+                <span className="text-sm sm:text-base md:text-lg lg:text-xl mx-0 my-0 px-[200px] xl:text-6xl">Experience the power of</span>
                 <br className="block sm:hidden" />
                 <span className="text-navy font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"> Synvelo</span>
               </span>
