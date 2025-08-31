@@ -28,13 +28,15 @@ export default {
 				'sans': ['Nunito', 'sans-serif'],
 			},
 			colors: {
+				background: 'hsl(var(--background))',
+				foreground: 'hsl(var(--foreground))',
+				skeleton: 'hsl(var(--skeleton))',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: {
-					DEFAULT: 'hsl(var(--background))',
-					secondary: 'hsl(var(--background-secondary))',
-					tertiary: 'hsl(var(--background-tertiary))'
+				card: {
+					DEFAULT: 'hsl(var(--card))',
+					foreground: 'hsl(var(--card-foreground))'
 				},
 				foreground: {
 					DEFAULT: 'hsl(var(--foreground))',
@@ -162,6 +164,18 @@ export default {
 				'bounce-gentle': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-5px)' }
+				},
+				'ripple': {
+					'0%, 100%': { transform: 'translate(-50%, -50%) scale(1)' },
+					'50%': { transform: 'translate(-50%, -50%) scale(0.9)' }
+				},
+				'orbit': {
+					'0%': {
+						transform: 'rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg)'
+					},
+					'100%': {
+						transform: 'rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)'
+					}
 				}
 			},
 			animation: {
@@ -175,7 +189,9 @@ export default {
 				'typewriter': 'typewriter 3s steps(50, end) infinite',
 				'text-reveal': 'text-reveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
 				'shimmer': 'shimmer 2s linear infinite',
-				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite'
+				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
+				'ripple': 'ripple 2s ease calc(var(--i, 0) * 0.2s) infinite',
+				'orbit': 'orbit calc(var(--duration) * 1s) linear infinite'
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',

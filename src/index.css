@@ -8,11 +8,16 @@
 
 @layer base {
   :root {
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(0, 0%, 0%);
+    --skeleton: hsl(0, 0%, 90%);
+    --border: hsl(220, 20%, 90%);
+    --btn-border: hsl(214deg, 31.8%, 91.4%);
+    --input: hsl(220, 20%, 90%);
+    
     /* Light theme colors */
-    --background: 0 0% 100%;
     --background-secondary: 220 14% 96%;
     --background-tertiary: 220 13% 91%;
-    --foreground: 222 84% 5%;
     --foreground-secondary: 215 16% 47%;
     --foreground-muted: 215 20% 65%;
 
@@ -75,11 +80,16 @@
   }
 
   .dark {
+    --background: hsl(222, 94%, 5%);
+    --foreground: hsl(0, 0%, 100%);
+    --skeleton: hsl(218, 36%, 16%);
+    --border: hsl(220, 20%, 90%);
+    --btn-border: hsl(217deg, 32.6%, 17.5%);
+    --input: hsl(219, 63%, 16%);
+    
     /* Dark theme colors */
-    --background: 0 0% 0%;
     --background-secondary: 220 50% 8%;
     --background-tertiary: 220 40% 12%;
-    --foreground: 0 0% 100%;
     --foreground-secondary: 220 15% 85%;
     --foreground-muted: 220 10% 65%;
 
@@ -168,6 +178,11 @@
 }
 
 @layer components {
+  .g-button {
+    @apply rounded-[var(--radius)] border;
+    border-color: var(--btn-border)
+  }
+
   /* Professional Subtle Effects */
   .navy-glow {
     box-shadow: var(--shadow-professional);
