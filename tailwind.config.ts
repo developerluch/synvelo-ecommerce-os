@@ -185,10 +185,6 @@ export default {
 					'100%': {
 						transform: 'rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)'
 					}
-				},
-				'gradient-shift': {
-					'0%': { backgroundPosition: '0% 50%' },
-					'100%': { backgroundPosition: '100% 50%' }
 				}
 			},
 			animation: {
@@ -204,8 +200,7 @@ export default {
 				'shimmer': 'shimmer 2s linear infinite',
 				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
 				'ripple': 'ripple 2s ease calc(var(--i, 0) * 0.2s) infinite',
-				'orbit': 'orbit calc(var(--duration) * 1s) linear infinite',
-				'gradient-shift': 'gradient-shift 8s ease-in-out infinite alternate'
+				'orbit': 'orbit calc(var(--duration) * 1s) linear infinite'
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',

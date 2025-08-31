@@ -4,129 +4,52 @@ import { motion } from "framer-motion";
 import dashboardHero from "@/assets/dashboard-hero.jpg";
 import DemoModal from "@/components/DemoModal";
 import { ContainerScroll } from "@/components/ContainerScroll";
-
 const Hero = () => {
-  return (
-    <section 
-      className="relative flex items-center justify-center overflow-hidden"
-      style={{
-        height: "100vh",
-        background: "linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243E 100%)",
-        position: "relative"
-      }}
-    >
-      {/* Background Overlay */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: "radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%)"
-        }}
-      />
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-hero opacity-40" />
+      
+      {/* Subtle Floating Particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-navy/30 rounded-full animate-float animation-delay-100" />
+        <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-navy/20 rounded-full animate-float animation-delay-300" />
+        <div className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-navy/30 rounded-full animate-float animation-delay-500" />
+      </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32 relative z-10">
         <div className="max-w-5xl mx-auto text-center space-y-8 sm:space-y-12">
-          {/* Main Headlines */}
-          <div className="space-y-6">
-            {/* Subtitle */}
-            <motion.h2 
-              className="text-white/85 font-semibold tracking-[0.08em] leading-tight"
-              style={{
-                fontSize: "clamp(1.2rem, 3vw, 2.5rem)",
-                fontFamily: "'Inter', 'SF Pro Display', -apple-system, sans-serif",
-                textTransform: "uppercase",
-                marginBottom: "20px"
-              }}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-            >
-              EXPERIENCE THE POWER OF ECOM AUTOMATION WITH
-            </motion.h2>
-
-            {/* Main Title */}
-            <motion.h1 
-              className="font-black text-center leading-[0.9] tracking-[0.02em]"
-              style={{
-                fontSize: "clamp(4rem, 12vw, 10rem)",
-                fontFamily: "'Inter', 'SF Pro Display', -apple-system, sans-serif",
-                textTransform: "uppercase",
-                background: "linear-gradient(135deg, #667EEA 0%, #764BA2 25%, #F093FB 50%, #C471ED 75%, #667EEA 100%)",
-                backgroundSize: "200% 200%",
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                color: "transparent",
-                WebkitTextFillColor: "transparent",
-                filter: "drop-shadow(0 4px 20px rgba(102, 126, 234, 0.3))",
-                animation: "gradient-shift 8s ease-in-out infinite alternate"
-              }}
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ 
-                duration: 1, 
-                delay: 0.4,
-                ease: [0.68, -0.55, 0.265, 1.55]
-              }}
-            >
-              SYNVELO
-            </motion.h1>
-
-            {/* Description */}
-            <motion.p 
-              className="text-white/70 leading-relaxed tracking-[0.02em]"
-              style={{
-                fontSize: "clamp(1rem, 2.5vw, 1.5rem)",
-                fontWeight: "400",
-                marginTop: "30px"
-              }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1 }}
-            >
-              The Operating System for Modern Ecommerce
-            </motion.p>
+          {/* Trust Badge */}
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-navy/10 text-navy text-xs sm:text-sm font-medium animate-fade-in-up">
+            <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
+            <span className="hidden xs:inline">Powering $50M+ in Amazon Sales</span>
+            <span className="xs:hidden">$50M+ in Sales</span>
           </div>
 
-          {/* CTA Buttons */}
-          <motion.div 
-            className="flex flex-col sm:flex-row items-center justify-center gap-5 mt-10"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.4 }}
-          >
-            <button
-              className="px-10 py-4 text-lg font-semibold text-white rounded-[30px] border-none cursor-pointer transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-              style={{
-                background: "linear-gradient(135deg, #667EEA 0%, #764BA2 100%)",
-                boxShadow: "0 10px 30px rgba(102, 126, 234, 0.3)"
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = "0 15px 40px rgba(102, 126, 234, 0.4)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = "0 10px 30px rgba(102, 126, 234, 0.3)";
-              }}
-            >
-              Start Free Trial
-            </button>
+          {/* Main Headline */}
+          <div className="space-y-4 sm:space-y-6 animate-fade-in-up animation-delay-100">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.05] tracking-tighter text-foreground/95 px-2 sm:px-0 xl:text-8xl py-0">
+              <span className="word-reveal block sm:inline">
+                <span className="text-sm sm:text-base md:text-lg lg:text-xl mx-0 my-0 px-[200px] xl:text-6xl">Experience the power of</span>
+                <br className="block sm:hidden" />
+                <span className="text-navy font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"> Synvelo</span>
+              </span>
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground-secondary/90 leading-[1.5] sm:leading-[1.6] max-w-xs sm:max-w-2xl lg:max-w-4xl mx-auto font-normal stagger-children px-4 sm:px-0">
+              Automate your eCommerce platforms with AI
+            </p>
             
-            <button
-              className="px-10 py-4 text-lg font-semibold text-white rounded-[30px] cursor-pointer transition-all duration-300 border-2"
-              style={{
-                background: "transparent",
-                borderColor: "rgba(255, 255, 255, 0.3)"
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.6)";
-                e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.3)";
-                e.currentTarget.style.background = "transparent";
-              }}
-            >
-              Watch Demo
-            </button>
-          </motion.div>
+            {/* Experience power text moved to center */}
+            <div className="pt-8">
+              
+            </div>
+          </div>
+
+          {/* CTAs */}
+          
+
+          {/* Trust Metrics */}
+          
+
         </div>
         
         {/* Dashboard Preview with ContainerScroll - moved to center */}
@@ -139,8 +62,6 @@ const Hero = () => {
           </ContainerScroll>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
