@@ -86,7 +86,7 @@ const Navigation = () => {
             <Button variant="ghost" size="sm">
               Login
             </Button>
-            <Button variant="hero" size="sm">
+            <Button variant="hero" size="sm" className="bg-black hover:bg-black/80 text-white">
               Start Free Trial
             </Button>
           </div>
@@ -156,7 +156,7 @@ const Navigation = () => {
                 <Button variant="ghost" size="sm">
                   Login
                 </Button>
-                <Button variant="hero" size="sm">
+                <Button variant="hero" size="sm" className="bg-black hover:bg-black/80 text-white">
                   Start Free Trial
                 </Button>
               </div>

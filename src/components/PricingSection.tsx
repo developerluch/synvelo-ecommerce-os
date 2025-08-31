@@ -212,7 +212,7 @@ const PricingSection = () => {
           <p className="text-foreground-secondary mb-6">
             Start your 14-day free trial today. No credit card required.
           </p>
-          <Button variant="hero" size="xl" className="group">
+          <Button variant="hero" size="xl" className="group bg-black hover:bg-black/80 text-white">
             Start Free Trial Now
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>

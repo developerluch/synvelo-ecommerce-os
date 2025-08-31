@@ -168,7 +168,7 @@ const SocialProof = () => {
                 </div>
               </div>
 
-              <Button variant="hero" size="lg" className="w-full group">
+              <Button variant="hero" size="lg" className="w-full group bg-black hover:bg-black/80 text-white">
                 Start Free Trial
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>

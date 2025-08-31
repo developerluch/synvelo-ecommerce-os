@@ -145,7 +145,7 @@ const FeaturesGrid = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="xl" className="group">
+            <Button variant="hero" size="xl" className="group bg-black hover:bg-black/80 text-white">
               Start Free Trial
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -289,7 +289,7 @@ const FeaturesGrid = () => {
               Join thousands of sellers who've automated their way to millions in revenue
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-              <Button variant="hero" size="xl" className="group">
+              <Button variant="hero" size="xl" className="group bg-black hover:bg-black/80 text-white">
                 Start Free Trial
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
