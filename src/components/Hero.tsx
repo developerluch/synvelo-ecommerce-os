@@ -28,11 +28,17 @@ const Hero = () => {
           {/* Main Headline */}
           <div className="space-y-6 animate-fade-in-up animation-delay-100">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] tracking-tighter text-foreground/95">
-              The Next Generation of{" "}
-              <span className="text-gradient-navy bg-clip-text text-transparent">eCommerce Automation</span>
+              <span className="word-reveal">The Next Generation of</span>{" "}
+              <div className="word-rotate text-shimmer inline-block">
+                <span>eCommerce Automation</span>
+                <span>Amazon FBA Tools</span>
+                <span>3PL Operations</span>
+              </div>
             </h1>
-            <p className="text-lg md:text-xl text-foreground-secondary/90 leading-[1.6] max-w-2xl mx-auto font-normal">
-              Automate your Amazon FBA business and 3PL operations with AI-powered tools that save 10+ hours weekly while scaling to millions in revenue.
+            <p className="text-lg md:text-xl text-foreground-secondary/90 leading-[1.6] max-w-2xl mx-auto font-normal stagger-children">
+              <span>Automate your Amazon FBA business and 3PL operations</span>
+              <span>with AI-powered tools that save 10+ hours weekly</span>
+              <span>while scaling to millions in revenue.</span>
             </p>
           </div>
 
@@ -73,7 +79,7 @@ const Hero = () => {
                 <Zap className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-navy">400+</div>
+                <div className="text-2xl font-bold text-navy hover-lift">400+</div>
                 <div className="text-sm text-foreground-muted">Features</div>
               </div>
             </div>
@@ -82,7 +88,7 @@ const Hero = () => {
                 <Users className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-navy">15+</div>
+                <div className="text-2xl font-bold text-navy hover-lift">15+</div>
                 <div className="text-sm text-foreground-muted">Integrations</div>
               </div>
             </div>
@@ -91,7 +97,7 @@ const Hero = () => {
                 <TrendingUp className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-navy">24/7</div>
+                <div className="text-2xl font-bold text-navy hover-lift">24/7</div>
                 <div className="text-sm text-foreground-muted">Automation</div>
               </div>
             </div>
