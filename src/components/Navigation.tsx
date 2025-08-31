@@ -13,6 +13,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const productItems = [
+    { label: "Features", href: "/features" },
     { label: "eCommerce Automation", href: "#ecommerce" },
     { label: "Synvelo 3PL", href: "#3pl" },
   ];
