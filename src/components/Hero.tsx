@@ -17,33 +17,34 @@ const Hero = () => {
         <div className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-navy/30 rounded-full animate-float animation-delay-500" />
       </div>
 
-      <div className="container mx-auto px-6 py-32 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32 relative z-10">
+        <div className="max-w-5xl mx-auto text-center space-y-8 sm:space-y-12">
           {/* Trust Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy/10 text-navy text-sm font-medium animate-fade-in-up">
-            <TrendingUp className="w-4 h-4" />
-            Powering $50M+ in Amazon Sales
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-navy/10 text-navy text-xs sm:text-sm font-medium animate-fade-in-up">
+            <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
+            <span className="hidden xs:inline">Powering $50M+ in Amazon Sales</span>
+            <span className="xs:hidden">$50M+ in Sales</span>
           </div>
 
           {/* Main Headline */}
-          <div className="space-y-6 animate-fade-in-up animation-delay-100">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] tracking-tighter text-foreground/95">
-              <span className="word-reveal">The Next Generation of</span>{" "}
-              <div className="word-rotate text-shimmer inline-block">
+          <div className="space-y-4 sm:space-y-6 animate-fade-in-up animation-delay-100">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-[1.05] tracking-tighter text-foreground/95 px-2 sm:px-0">
+              <span className="word-reveal block sm:inline">The Next Generation of</span>{" "}
+              <div className="word-rotate text-shimmer inline-block mt-2 sm:mt-0">
                 <span>eCommerce Automation</span>
                 <span>Amazon FBA Tools</span>
                 <span>3PL Operations</span>
               </div>
             </h1>
-            <p className="text-lg md:text-xl text-foreground-secondary/90 leading-[1.6] max-w-2xl mx-auto font-normal stagger-children">
-              <span>Automate your Amazon FBA business and 3PL operations</span>
-              <span>with AI-powered tools that save 10+ hours weekly</span>
-              <span>while scaling to millions in revenue.</span>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground-secondary/90 leading-[1.5] sm:leading-[1.6] max-w-xs sm:max-w-2xl lg:max-w-4xl mx-auto font-normal stagger-children px-4 sm:px-0">
+              <span className="block sm:inline">Automate your Amazon FBA business and 3PL operations</span>
+              <span className="block sm:inline"> with AI-powered tools that save 10+ hours weekly</span>
+              <span className="block sm:inline"> while scaling to millions in revenue.</span>
             </p>
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center animate-fade-in-up animation-delay-200">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up animation-delay-200 px-4 sm:px-0">
             <div className="inline-block group relative bg-gradient-to-b from-navy/10 to-white/10 p-px rounded-lg backdrop-blur-lg overflow-hidden shadow-professional hover:shadow-xl transition-shadow duration-300">
               <motion.div
                 whileHover={{ y: -2 }}
@@ -53,19 +54,19 @@ const Hero = () => {
                 <Button 
                   variant="hero" 
                   size="xl" 
-                  className="group rounded-lg px-8 py-6 backdrop-blur-md bg-white hover:bg-white/90 text-black transition-all duration-300 hover:shadow-lg"
+                  className="group rounded-lg px-6 sm:px-8 py-4 sm:py-6 backdrop-blur-md bg-white hover:bg-white/90 text-black transition-all duration-300 hover:shadow-lg text-sm sm:text-base w-full sm:w-auto"
                 >
                   <span className="font-medium group-hover:opacity-100 transition-opacity">
                     7 Day Free Trial
                   </span>
-                  <ArrowRight className="w-5 h-5 ml-2 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
                 </Button>
               </motion.div>
             </div>
             <DemoModal 
               trigger={
-                <Button variant="outline-navy" size="xl" className="group rounded-sm">
-                  <Play className="w-5 h-5" />
+                <Button variant="outline-navy" size="xl" className="group rounded-sm px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base w-full sm:w-auto">
+                  <Play className="w-4 h-4 sm:w-5 sm:h-5" />
                   Watch Demo
                 </Button>
               }
@@ -73,59 +74,59 @@ const Hero = () => {
           </div>
 
           {/* Trust Metrics */}
-          <div className="flex flex-wrap justify-center gap-8 pt-8 animate-fade-in-up animation-delay-300">
-            <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-navy/10 text-navy">
-                <Zap className="w-5 h-5" />
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 pt-6 sm:pt-8 animate-fade-in-up animation-delay-300 px-4 sm:px-0">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-navy/10 text-navy">
+                <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-navy hover-lift">400+</div>
-                <div className="text-sm text-foreground-muted">Features</div>
+                <div className="text-xl sm:text-2xl font-bold text-navy hover-lift">400+</div>
+                <div className="text-xs sm:text-sm text-foreground-muted">Features</div>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-navy/10 text-navy">
-                <Users className="w-5 h-5" />
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-navy/10 text-navy">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-navy hover-lift">15+</div>
-                <div className="text-sm text-foreground-muted">Integrations</div>
+                <div className="text-xl sm:text-2xl font-bold text-navy hover-lift">15+</div>
+                <div className="text-xs sm:text-sm text-foreground-muted">Integrations</div>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-navy/10 text-navy">
-                <TrendingUp className="w-5 h-5" />
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-navy/10 text-navy">
+                <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-navy hover-lift">24/7</div>
-                <div className="text-sm text-foreground-muted">Automation</div>
+                <div className="text-xl sm:text-2xl font-bold text-navy hover-lift">24/7</div>
+                <div className="text-xs sm:text-sm text-foreground-muted">Automation</div>
               </div>
             </div>
           </div>
 
           {/* Dashboard Preview Below */}
-          <div className="pt-16 animate-scale-in animation-delay-400">
-            <div className="relative max-w-4xl mx-auto">
+          <div className="pt-12 sm:pt-16 animate-scale-in animation-delay-400 px-4 sm:px-0">
+            <div className="relative max-w-sm sm:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
               {/* Subtle Glow Effect */}
-              <div className="absolute inset-0 bg-navy/10 rounded-2xl blur-3xl scale-105" />
+              <div className="absolute inset-0 bg-navy/10 rounded-xl sm:rounded-2xl blur-2xl sm:blur-3xl scale-105" />
               
               {/* Dashboard Image */}
-              <div className="relative bg-gradient-card rounded-2xl p-3">
+              <div className="relative bg-gradient-card rounded-xl sm:rounded-2xl p-2 sm:p-3">
                 <img
                   src={dashboardHero}
                   alt="Synvelo FBA Dashboard - Real-time analytics and automation"
-                  className="w-full h-auto rounded-xl shadow-2xl"
+                  className="w-full h-auto rounded-lg sm:rounded-xl shadow-xl sm:shadow-2xl"
                 />
                 
                 {/* Floating Metrics */}
-                <div className="absolute top-8 left-8 bg-glass backdrop-blur-lg rounded-lg p-3">
+                <div className="absolute top-4 sm:top-8 left-4 sm:left-8 bg-glass backdrop-blur-lg rounded-md sm:rounded-lg p-2 sm:p-3">
                   <div className="text-xs text-foreground-muted">Revenue Today</div>
-                  <div className="text-lg font-bold text-navy">$24,847</div>
+                  <div className="text-sm sm:text-lg font-bold text-navy">$24,847</div>
                 </div>
                 
-                <div className="absolute bottom-8 right-8 bg-glass backdrop-blur-lg rounded-lg p-3">
+                <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 bg-glass backdrop-blur-lg rounded-md sm:rounded-lg p-2 sm:p-3">
                   <div className="text-xs text-foreground-muted">Active Automations</div>
-                  <div className="text-lg font-bold text-navy">8</div>
+                  <div className="text-sm sm:text-lg font-bold text-navy">8</div>
                 </div>
               </div>
             </div>
