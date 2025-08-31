@@ -3,6 +3,7 @@ import { ArrowRight, Play, TrendingUp, Users, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import dashboardHero from "@/assets/dashboard-hero.jpg";
 import DemoModal from "@/components/DemoModal";
+import { ContainerScroll } from "@/components/ContainerScroll";
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Gradient */}
@@ -27,12 +28,7 @@ const Hero = () => {
           {/* Main Headline */}
           <div className="space-y-4 sm:space-y-6 animate-fade-in-up animation-delay-100">
             <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-[1.05] tracking-tighter text-foreground/95 px-2 sm:px-0">
-              <span className="word-reveal block sm:inline">The next generation of <span className="text-navy font-medium">eCommerce Automation</span></span>{" "}
-              <div className="word-rotate text-shimmer inline-block mt-2 sm:mt-0">
-                <span>eCommerce Automation</span>
-                <span>Amazon FBA Tools</span>
-                <span>3PL Operations</span>
-              </div>
+              <span className="word-reveal block sm:inline">Experience the power of <span className="text-navy font-medium">Synvelo</span></span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground-secondary/90 leading-[1.5] sm:leading-[1.6] max-w-xs sm:max-w-2xl lg:max-w-4xl mx-auto font-normal stagger-children px-4 sm:px-0">
               <span className="block sm:inline">Automate your Amazon FBA business and 3PL operations</span>
@@ -98,31 +94,29 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Dashboard Preview Below */}
-          <div className="pt-12 sm:pt-16 animate-scale-in animation-delay-400 px-4 sm:px-0">
-            <div className="relative max-w-sm sm:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
-              {/* Subtle Glow Effect */}
-              <div className="absolute inset-0 bg-navy/10 rounded-xl sm:rounded-2xl blur-2xl sm:blur-3xl scale-105" />
-              
-              {/* Dashboard Image */}
-              <div className="relative bg-gradient-card rounded-xl sm:rounded-2xl p-2 sm:p-3">
-                <img src={dashboardHero} alt="Synvelo FBA Dashboard - Real-time analytics and automation" className="w-full h-auto rounded-lg sm:rounded-xl shadow-xl sm:shadow-2xl" />
-                
-                {/* Floating Metrics */}
-                <div className="absolute top-4 sm:top-8 left-4 sm:left-8 bg-glass backdrop-blur-lg rounded-md sm:rounded-lg p-2 sm:p-3">
-                  <div className="text-xs text-foreground-muted">Revenue Today</div>
-                  <div className="text-sm sm:text-lg font-bold text-navy">$24,847</div>
-                </div>
-                
-                <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 bg-glass backdrop-blur-lg rounded-md sm:rounded-lg p-2 sm:p-3">
-                  <div className="text-xs text-foreground-muted">Active Automations</div>
-                  <div className="text-sm sm:text-lg font-bold text-navy">8</div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
+      
+      {/* Dashboard Preview with ContainerScroll */}
+      <ContainerScroll
+        titleComponent={
+          <div className="mx-auto text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+              Built for <span className="text-navy">Scale</span>
+            </h2>
+            <p className="text-xl text-foreground-secondary max-w-2xl mx-auto">
+              See how our platform transforms your Amazon FBA operations with real-time insights and automation.
+            </p>
+          </div>
+        }
+      >
+        <img
+          src={dashboardHero}
+          alt="Synvelo FBA Dashboard - Real-time analytics and automation"
+          className="mx-auto rounded-2xl object-cover h-full object-left-top"
+          draggable={false}
+        />
+      </ContainerScroll>
     </section>;
 };
 export default Hero;
