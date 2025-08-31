@@ -107,12 +107,12 @@ const Hero = () => {
                 />
                 
                 {/* Floating Metrics */}
-                <div className="absolute top-8 left-8 bg-card/90 backdrop-blur-sm rounded-lg p-3 border border-navy/20">
+                <div className="absolute top-8 left-8 bg-glass backdrop-blur-lg rounded-lg p-3 border border-glass-border">
                   <div className="text-xs text-foreground-muted">Revenue Today</div>
                   <div className="text-lg font-bold text-navy">$24,847</div>
                 </div>
                 
-                <div className="absolute bottom-8 right-8 bg-card/90 backdrop-blur-sm rounded-lg p-3 border border-navy/20">
+                <div className="absolute bottom-8 right-8 bg-glass backdrop-blur-lg rounded-lg p-3 border border-glass-border">
                   <div className="text-xs text-foreground-muted">Active Automations</div>
                   <div className="text-lg font-bold text-navy">8</div>
                 </div>

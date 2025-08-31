@@ -88,7 +88,7 @@ const SocialProof = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
           {/* ROI Calculator */}
-          <Card className="glass border-navy/20 animate-scale-in">
+          <Card className="bg-glass backdrop-blur-lg border-glass-border animate-scale-in">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
                 <Calculator className="w-6 h-6 text-navy" />
@@ -177,7 +177,7 @@ const SocialProof = () => {
               </div>
             </div>
 
-            <div className="bg-card border border-card-border rounded-lg p-6">
+            <div className="bg-glass backdrop-blur-md border-glass-border rounded-lg p-6">
               <h4 className="font-semibold mb-4">Replaces These Expensive Tools:</h4>
               <div className="space-y-2 text-sm text-foreground-muted">
                 <div className="flex justify-between">
@@ -235,7 +235,7 @@ const SocialProof = () => {
         {/* Testimonials */}
         <div className="grid lg:grid-cols-3 gap-8 animate-fade-in-up animation-delay-400">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="glass border-navy/20">
+            <Card key={index} className="bg-glass backdrop-blur-lg border-glass-border hover:border-glass-border-hover hover:bg-glass-hover transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center gap-1 mb-2">
                   {[...Array(testimonial.rating)].map((_, i) => (

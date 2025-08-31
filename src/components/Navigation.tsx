@@ -23,7 +23,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-glass backdrop-blur-lg border-b border-glass-border">
       <div className="container mx-auto px-6 pt-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -38,7 +38,7 @@ const Navigation = () => {
           <div className="hidden md:flex items-center gap-8">
             {/* Products Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground-secondary hover:text-navy transition-all duration-200 hover:scale-105 px-3 py-2 rounded-md hover:bg-navy/5 font-semibold">
+              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground-secondary hover:text-navy transition-all duration-200 hover:scale-105 px-3 py-2 rounded-md hover:bg-glass-hover backdrop-blur-sm font-semibold">
                 Products
                 <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
@@ -54,18 +54,18 @@ const Navigation = () => {
             </DropdownMenu>
 
             {/* Company */}
-            <a href="#company" className="text-foreground-secondary hover:text-navy transition-all duration-200 hover:scale-105 px-3 py-2 rounded-md hover:bg-navy/5 font-semibold">
+            <a href="#company" className="text-foreground-secondary hover:text-navy transition-all duration-200 hover:scale-105 px-3 py-2 rounded-md hover:bg-glass-hover backdrop-blur-sm font-semibold">
               Company
             </a>
 
             {/* Pricing */}
-            <a href="#pricing" className="text-foreground-secondary hover:text-navy transition-all duration-200 hover:scale-105 px-3 py-2 rounded-md hover:bg-navy/5 font-semibold">
+            <a href="#pricing" className="text-foreground-secondary hover:text-navy transition-all duration-200 hover:scale-105 px-3 py-2 rounded-md hover:bg-glass-hover backdrop-blur-sm font-semibold">
               Pricing
             </a>
 
             {/* Resources Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground-secondary hover:text-navy transition-all duration-200 hover:scale-105 px-3 py-2 rounded-md hover:bg-navy/5 font-semibold">
+              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground-secondary hover:text-navy transition-all duration-200 hover:scale-105 px-3 py-2 rounded-md hover:bg-glass-hover backdrop-blur-sm font-semibold">
                 Resources
                 <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>

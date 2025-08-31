@@ -69,6 +69,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))',
 					border: 'hsl(var(--card-border))'
+				},
+				glass: {
+					DEFAULT: 'var(--glass-background)',
+					hover: 'var(--glass-background-hover)',
+					border: 'var(--glass-border)',
+					'border-hover': 'var(--glass-border-hover)'
 				}
 			},
 		borderRadius: {
