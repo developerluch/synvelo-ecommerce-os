@@ -119,7 +119,27 @@ const FeaturesGrid = () => {
         <div className="mb-20">
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {coreFeatures.map((feature, index) => {})}
+            {coreFeatures.map((feature, index) => (
+              <Card key={index} className="p-6 bg-glass backdrop-blur-md hover:bg-glass-hover transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-navy/10 text-navy">
+                    <feature.icon className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold">{feature.title}</h4>
+                  </div>
+                </div>
+                <p className="text-foreground-secondary mb-4">{feature.description}</p>
+                <div className="space-y-2">
+                  {feature.features.map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-navy" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
 
