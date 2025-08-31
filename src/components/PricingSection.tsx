@@ -4,70 +4,36 @@ import { Badge } from "@/components/ui/badge";
 import { Check, Star, ArrowRight, Shield, Zap } from "lucide-react";
 
 const PricingSection = () => {
+  const coreFeatures = [
+    "Real-Time Dashboard with drag-and-drop customization",
+    "AI Automation Agents for inventory & pricing",
+    "Amazon SP-API integration for real-time data",
+    "Multi-store management & analytics"
+  ];
+
   const plans = [
-    {
-      name: "Starter",
-      price: 47,
-      originalPrice: 97,
-      badge: "Limited Time",
-      description: "Perfect for new sellers getting started",
-      features: [
-        "Real-time FBA Dashboard",
-        "4 AI Automation Agents",
-        "Basic integrations (5)",
-        "Email support",
-        "Up to 1,000 SKUs",
-        "Basic reporting"
-      ],
-      limitations: [
-        "No checkout bots",
-        "Limited API calls",
-        "Basic notifications"
-      ],
-      cta: "Start Free Trial",
-      popular: false
-    },
     {
       name: "Professional",
       price: 97,
-      originalPrice: 197,
-      badge: "Most Popular",
-      description: "Everything you need to scale your business",
-      features: [
-        "Everything in Starter",
-        "8 AI Automation Agents",
-        "Checkout Bot Network",
-        "All 15+ integrations",
+      description: "Complete Amazon FBA automation platform",
+      features: coreFeatures.concat([
         "Priority support",
         "Unlimited SKUs",
-        "Advanced analytics",
-        "Custom notifications",
-        "Multi-store management",
-        "API access"
-      ],
-      limitations: [],
+        "14-day free trial"
+      ]),
       cta: "Start Free Trial",
       popular: true
     },
     {
       name: "Enterprise",
       price: 297,
-      originalPrice: 497,
-      badge: "Best Value",
       description: "For agencies and high-volume sellers",
-      features: [
-        "Everything in Professional",
+      features: coreFeatures.concat([
         "White-label options",
         "Dedicated account manager",
         "Custom integrations",
-        "24/7 phone support",
-        "Advanced compliance tools",
-        "Team collaboration",
-        "Custom reporting",
-        "SLA guarantees",
-        "Developer API access"
-      ],
-      limitations: [],
+        "24/7 phone support"
+      ]),
       cta: "Contact Sales",
       popular: false
     }
@@ -100,55 +66,34 @@ const PricingSection = () => {
             <span className="text-gradient-navy bg-clip-text text-transparent">Pricing</span>
           </h2>
           <p className="text-xl text-foreground-secondary max-w-3xl mx-auto mb-8">
-            Replace $500+ in monthly tool costs with one comprehensive platform
+            One comprehensive platform for Amazon FBA automation
           </p>
-          
-          {/* Savings Banner */}
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-navy/10 rounded-full text-navy font-semibold mb-8">
-            <Star className="w-5 h-5" />
-            Limited Time: Save 50% on your first 3 months
-          </div>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
           {plans.map((plan, index) => (
             <Card 
               key={index} 
               className={`relative bg-glass backdrop-blur-lg hover:bg-glass-hover transition-all duration-300 ${
-                plan.popular ? 'ring-2 ring-navy/50 scale-105' : ''
+                plan.popular ? 'ring-2 ring-navy/50' : ''
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                   <Badge className="bg-navy text-white px-4 py-1">
-                    {plan.badge}
+                    Most Popular
                   </Badge>
                 </div>
               )}
               
               <CardHeader className="text-center pb-4">
-                <div className="flex justify-between items-start mb-2">
-                  <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
-                  {!plan.popular && plan.badge && (
-                    <Badge variant="outline" className="text-xs">
-                      {plan.badge}
-                    </Badge>
-                  )}
-                </div>
+                <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
                 
                 <div className="mb-4">
                   <div className="flex items-center justify-center gap-2">
                     <span className="text-4xl font-bold text-navy">${plan.price}</span>
-                    <div className="text-left">
-                      <div className="text-sm text-foreground-muted line-through">
-                        ${plan.originalPrice}
-                      </div>
-                      <div className="text-sm text-foreground-muted">/month</div>
-                    </div>
-                  </div>
-                  <div className="text-sm text-navy font-medium mt-1">
-                    Save ${plan.originalPrice - plan.price}/month
+                    <div className="text-sm text-foreground-muted">/month</div>
                   </div>
                 </div>
                 
@@ -161,15 +106,6 @@ const PricingSection = () => {
                     <div key={idx} className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-navy flex-shrink-0 mt-0.5" />
                       <span className="text-sm">{feature}</span>
-                    </div>
-                  ))}
-                  
-                  {plan.limitations.map((limitation, idx) => (
-                    <div key={idx} className="flex items-start gap-3 opacity-60">
-                      <div className="w-5 h-5 flex-shrink-0 mt-0.5 flex items-center justify-center">
-                        <div className="w-1 h-1 bg-foreground-muted rounded-full" />
-                      </div>
-                      <span className="text-sm line-through">{limitation}</span>
                     </div>
                   ))}
                 </div>
