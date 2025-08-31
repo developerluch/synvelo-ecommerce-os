@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { BackgroundPaths } from '@/components/BackgroundPaths';
 import { useAuth } from '@/contexts/AuthContext';
-import { Chrome, Github, MessageCircle, ArrowLeft } from 'lucide-react';
+import { Chrome, MessageCircle, ArrowLeft } from 'lucide-react';
 
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -39,7 +39,7 @@ const Auth = () => {
     }
   };
 
-  const handleOAuthSignIn = async (provider: 'google' | 'github' | 'discord') => {
+  const handleOAuthSignIn = async (provider: 'google' | 'discord') => {
     setLoading(true);
     try {
       await signInWithProvider(provider);
@@ -92,17 +92,6 @@ const Auth = () => {
                 >
                   <Chrome className="mr-2 h-4 w-4" />
                   Continue with Google
-                </Button>
-                
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={() => handleOAuthSignIn('github')}
-                  disabled={loading}
-                  className="w-full bg-card/50 border-border hover:bg-card/70 transition-all"
-                >
-                  <Github className="mr-2 h-4 w-4" />
-                  Continue with GitHub
                 </Button>
                 
                 <Button
