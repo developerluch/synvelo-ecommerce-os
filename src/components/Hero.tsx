@@ -27,11 +27,11 @@ const Hero = () => {
 
           {/* Main Headline */}
           <div className="space-y-6 animate-fade-in-up animation-delay-100">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] tracking-tighter text-foreground/95 backdrop-blur-sm">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] tracking-tighter text-foreground/95">
               The Next Generation of{" "}
               <span className="text-gradient-navy bg-clip-text text-transparent">eCommerce Automation</span>
             </h1>
-            <p className="text-lg md:text-xl text-foreground-secondary/90 leading-[1.6] max-w-2xl mx-auto font-normal backdrop-blur-sm">
+            <p className="text-lg md:text-xl text-foreground-secondary/90 leading-[1.6] max-w-2xl mx-auto font-normal">
               Automate your Amazon FBA business and 3PL operations with AI-powered tools that save 10+ hours weekly while scaling to millions in revenue.
             </p>
           </div>
