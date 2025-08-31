@@ -35,9 +35,7 @@ const Hero = () => {
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground-secondary/90 leading-[1.5] sm:leading-[1.6] max-w-xs sm:max-w-2xl lg:max-w-4xl mx-auto font-normal stagger-children px-4 sm:px-0">
-              <span className="block sm:inline">Automate your Amazon FBA business and 3PL operations</span>
-              
-              <span className="block sm:inline"> while scaling to millions in revenue.</span>
+              Automate your eCommerce platforms with AI
             </p>
             
             {/* Experience power text moved to center */}
