@@ -29,6 +29,8 @@ export default {
 			},
 			colors: {
 				background: 'hsl(var(--background))',
+				'background-secondary': 'hsl(var(--background-secondary))',
+				'background-tertiary': 'hsl(var(--background-tertiary))',
 				foreground: 'hsl(var(--foreground))',
 				skeleton: 'hsl(var(--skeleton))',
 				border: 'hsl(var(--border))',
@@ -78,10 +80,10 @@ export default {
 					border: 'hsl(var(--card-border))'
 				},
 				glass: {
-					DEFAULT: 'var(--glass-background)',
-					hover: 'var(--glass-background-hover)',
-					border: 'var(--glass-border)',
-					'border-hover': 'var(--glass-border-hover)'
+					DEFAULT: 'rgba(var(--glass-background))',
+					hover: 'rgba(var(--glass-background-hover))',
+					border: 'rgba(var(--glass-border))',
+					'border-hover': 'rgba(var(--glass-border-hover))'
 				}
 			},
 		borderRadius: {
@@ -89,6 +91,13 @@ export default {
 			md: '4px', 
 			sm: '2px',
 			professional: '3px'
+		},
+		boxShadow: {
+			'input': [
+				'0px 2px 3px -1px rgba(0, 0, 0, 0.1)',
+				'0px 1px 0px 0px rgba(25, 28, 33, 0.02)',
+				'0px 0px 0px 1px rgba(25, 28, 33, 0.08)'
+			].join(', ')
 		},
 			keyframes: {
 				'accordion-down': {
