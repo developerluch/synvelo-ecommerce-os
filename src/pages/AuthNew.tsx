@@ -16,7 +16,7 @@ import {
   useMotionTemplate,
   useMotionValue,
 } from 'framer-motion';
-import { Eye, EyeOff, Chrome } from 'lucide-react';
+import { Eye, EyeOff, Chrome, ArrowLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useAuth } from '@/contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -493,11 +493,15 @@ export default function AuthNew() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background-secondary to-background-tertiary flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-navy/5"></div>
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-navy/10 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
+    <div className="min-h-screen bg-background flex items-center justify-center p-4 relative">
+      {/* Back to Home Link */}
+      <button
+        onClick={() => navigate('/')}
+        className="absolute top-6 left-6 flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
+      >
+        <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+        <span>Back to Home</span>
+      </button>
       
       <div className="relative w-full max-w-md z-10">
         <div className="glass border border-glass-border rounded-2xl p-8 shadow-2xl relative overflow-hidden">
