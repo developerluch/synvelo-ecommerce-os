@@ -105,24 +105,11 @@ const Hero = () => {
         
         {/* Dashboard Preview with ContainerScroll - moved to center */}
         <div className="mt-16 sm:mt-24">
-          <ContainerScroll
-            titleComponent={
-              <div className="mx-auto text-center mb-20">
-                <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-                  Built for <span className="text-navy">Scale</span>
-                </h2>
-                <p className="text-xl text-foreground-secondary max-w-2xl mx-auto">
-                  See how our platform transforms your Amazon FBA operations with real-time insights and automation.
-                </p>
-              </div>
-            }
-          >
-            <img
-              src={dashboardHero}
-              alt="Synvelo FBA Dashboard - Real-time analytics and automation"
-              className="mx-auto rounded-2xl object-cover h-full object-left-top"
-              draggable={false}
-            />
+          <ContainerScroll titleComponent={<div className="mx-auto text-center mb-20">
+                
+                
+              </div>}>
+            <img src={dashboardHero} alt="Synvelo FBA Dashboard - Real-time analytics and automation" className="mx-auto rounded-2xl object-cover h-full object-left-top" draggable={false} />
           </ContainerScroll>
         </div>
       </div>
