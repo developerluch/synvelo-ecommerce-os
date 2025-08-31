@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, TrendingUp, Users, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import dashboardHero from "@/assets/dashboard-hero.jpg";
+import DemoModal from "@/components/DemoModal";
 
 const Hero = () => {
   return (
@@ -55,10 +56,14 @@ const Hero = () => {
                 </Button>
               </motion.div>
             </div>
-            <Button variant="outline-navy" size="xl" className="group rounded-sm border-border/20">
-              <Play className="w-5 h-5" />
-              Watch Demo
-            </Button>
+            <DemoModal 
+              trigger={
+                <Button variant="outline-navy" size="xl" className="group rounded-sm border-border/20">
+                  <Play className="w-5 h-5" />
+                  Watch Demo
+                </Button>
+              }
+            />
           </div>
 
           {/* Trust Metrics */}

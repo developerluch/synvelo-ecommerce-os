@@ -38,22 +38,34 @@ const SocialProof = () => {
       role: "Amazon FBA Seller",
       revenue: "$2.4M Annual",
       content: "Synvelo's AI agents saved me 15 hours per week. The ROI was immediate.",
-      rating: 5
+      rating: 5,
+      verified: true
     },
     {
-      name: "Marcus Rodriguez",
+      name: "Marcus Rodriguez", 
       role: "3PL Owner",
       revenue: "500K Orders/Year",
       content: "TikTok Live integration alone increased our client revenue by 300%.",
-      rating: 5
+      rating: 5,
+      verified: true
     },
     {
       name: "Jennifer Walsh",
-      role: "Multi-Channel Seller",
+      role: "Multi-Channel Seller", 
       revenue: "$1.8M Annual",
       content: "Replaced 6 different tools with Synvelo. The automation is incredible.",
-      rating: 5
+      rating: 5,
+      verified: true
     }
+  ];
+
+  const companyLogos = [
+    { name: "Fulfillment by Amazon", logo: "FBA" },
+    { name: "Shopify Plus", logo: "S+" },
+    { name: "BigCommerce", logo: "BC" },
+    { name: "WooCommerce", logo: "WC" },
+    { name: "Walmart Marketplace", logo: "WM" },
+    { name: "eBay", logo: "EB" }
   ];
 
   const metrics = [
@@ -232,17 +244,38 @@ const SocialProof = () => {
           ))}
         </div>
 
+        {/* Company Logos */}
+        <div className="mb-16 animate-fade-in-up animation-delay-300">
+          <h3 className="text-center text-lg font-semibold text-foreground-muted mb-8">
+            Trusted by sellers on these platforms
+          </h3>
+          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+            {companyLogos.map((company, index) => (
+              <div key={index} className="flex items-center justify-center w-16 h-16 bg-glass backdrop-blur-lg rounded-lg border border-glass-border hover:border-glass-border-hover hover:opacity-80 transition-all duration-300">
+                <span className="font-bold text-navy text-sm">{company.logo}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Testimonials */}
         <div className="grid lg:grid-cols-3 gap-8 animate-fade-in-up animation-delay-400">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-glass backdrop-blur-lg border-glass-border hover:border-glass-border-hover hover:bg-glass-hover transition-all duration-300">
+            <Card key={index} className="bg-glass backdrop-blur-lg border-glass-border hover:border-glass-border-hover hover:bg-glass-hover transition-all duration-300 group">
               <CardHeader>
-                <div className="flex items-center gap-1 mb-2">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-navy text-navy" />
-                  ))}
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-navy text-navy" />
+                    ))}
+                  </div>
+                  {testimonial.verified && (
+                    <div className="text-xs bg-navy/10 text-navy px-2 py-1 rounded-full font-medium">
+                      Verified
+                    </div>
+                  )}
                 </div>
-                <CardTitle className="text-lg">{testimonial.name}</CardTitle>
+                <CardTitle className="text-lg group-hover:text-navy transition-colors">{testimonial.name}</CardTitle>
                 <div className="text-sm text-foreground-muted">
                   {testimonial.role} • {testimonial.revenue}
                 </div>

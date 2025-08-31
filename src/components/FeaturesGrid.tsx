@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import DemoModal from "@/components/DemoModal";
 import { 
   Bot, 
   ShoppingCart, 
@@ -148,10 +149,14 @@ const FeaturesGrid = () => {
               Start Free Trial
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline-navy" size="xl" className="group">
-              Watch Demo
-              <Eye className="w-5 h-5" />
-            </Button>
+            <DemoModal 
+              trigger={
+                <Button variant="outline-navy" size="xl" className="group">
+                  Watch Demo
+                  <Eye className="w-5 h-5" />
+                </Button>
+              }
+            />
           </div>
         </div>
 

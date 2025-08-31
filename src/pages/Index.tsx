@@ -2,6 +2,8 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import FeaturesGrid from "@/components/FeaturesGrid";
 import SocialProof from "@/components/SocialProof";
+import PricingSection from "@/components/PricingSection";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import LiveChat from "@/components/LiveChat";
 import { BackgroundPaths } from "@/components/BackgroundPaths";
@@ -20,6 +22,8 @@ const Index = () => {
         <Hero />
         <FeaturesGrid />
         <SocialProof />
+        <PricingSection />
+        <FAQ />
         <Footer />
         <LiveChat />
       </div>
