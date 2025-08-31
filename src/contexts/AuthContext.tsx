@@ -30,6 +30,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const { toast } = useToast();
 
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    
     // Set up auth state listener FIRST
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
@@ -39,14 +41,30 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
     );
 
-    // THEN check for existing session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      setLoading(false);
-    });
+    // THEN check for existing session with timeout
+    const checkSession = async () => {
+      try {
+        timeoutId = setTimeout(() => {
+          setLoading(false);
+        }, 5000); // 5 second timeout
+        
+        const { data: { session } } = await supabase.auth.getSession();
+        clearTimeout(timeoutId);
+        setSession(session);
+        setUser(session?.user ?? null);
+        setLoading(false);
+      } catch (error) {
+        clearTimeout(timeoutId);
+        setLoading(false);
+      }
+    };
 
-    return () => subscription.unsubscribe();
+    checkSession();
+
+    return () => {
+      subscription.unsubscribe();
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, []);
 
   const signUp = async (email: string, password: string) => {

@@ -24,51 +24,21 @@ import { Button } from '@/components/ui/button';
 
 // ==================== Input Component ====================
 
-const AnimatedInput = memo(
+const LightInput = memo(
   forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(
-    function AnimatedInput({ className, type, ...props }, ref) {
-      const radius = 100;
-      const [visible, setVisible] = useState(false);
-
-      const mouseX = useMotionValue(0);
-      const mouseY = useMotionValue(0);
-
-      function handleMouseMove({
-        currentTarget,
-        clientX,
-        clientY,
-      }: React.MouseEvent<HTMLDivElement>) {
-        const { left, top } = currentTarget.getBoundingClientRect();
-        mouseX.set(clientX - left);
-        mouseY.set(clientY - top);
-      }
-
+    function LightInput({ className, type, ...props }, ref) {
       return (
-        <motion.div
-          style={{
-            background: useMotionTemplate`
-              radial-gradient(
-                ${visible ? radius + 'px' : '0px'} circle at ${mouseX}px ${mouseY}px,
-                #3b82f6,
-                transparent 80%
-              )
-            `,
-          }}
-          onMouseMove={handleMouseMove}
-          onMouseEnter={() => setVisible(true)}
-          onMouseLeave={() => setVisible(false)}
-          className='group/input rounded-lg p-[2px] transition duration-300'
-        >
+        <div className='group/input rounded-lg p-[2px] bg-gradient-to-r from-background to-muted/20 hover:from-primary/10 hover:to-accent/10 transition-all duration-200'>
           <input
             type={type}
             className={cn(
-              `shadow-input dark:placeholder-text-neutral-600 flex h-10 w-full rounded-md border-none bg-gray-50 px-3 py-2 text-sm text-black transition duration-400 group-hover/input:shadow-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-400 focus-visible:ring-[2px] focus-visible:ring-neutral-400 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:bg-zinc-800 dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600`,
+              'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
               className
             )}
             ref={ref}
             {...props}
           />
-        </motion.div>
+        </div>
       );
     }
   )
@@ -86,68 +56,24 @@ type BoxRevealProps = {
   className?: string;
 };
 
-const BoxReveal = memo(function BoxReveal({
+const SimpleReveal = memo(function SimpleReveal({
   children,
-  width = 'fit-content',
-  boxColor,
-  duration,
-  overflow = 'hidden',
-  position = 'relative',
   className,
-}: BoxRevealProps) {
-  const mainControls = useAnimation();
-  const slideControls = useAnimation();
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    if (isInView) {
-      slideControls.start('visible');
-      mainControls.start('visible');
-    } else {
-      slideControls.start('hidden');
-      mainControls.start('hidden');
-    }
-  }, [isInView, mainControls, slideControls]);
-
+  delay = 0,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}) {
   return (
-    <section
-      ref={ref}
-      style={{
-        position: position as 'relative' | 'absolute' | 'fixed' | 'sticky' | 'static',
-        width,
-        overflow,
-      }}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay, ease: 'easeOut' }}
       className={className}
     >
-      <motion.div
-        variants={{
-          hidden: { opacity: 0, y: 75 },
-          visible: { opacity: 1, y: 0 },
-        }}
-        initial='hidden'
-        animate={mainControls}
-        transition={{ duration: duration ?? 0.5, delay: 0.25 }}
-      >
-        {children}
-      </motion.div>
-      <motion.div
-        variants={{ hidden: { left: 0 }, visible: { left: '100%' } }}
-        initial='hidden'
-        animate={slideControls}
-        transition={{ duration: duration ?? 0.5, ease: 'easeIn' }}
-        style={{
-          position: 'absolute',
-          top: 4,
-          bottom: 4,
-          left: 0,
-          right: 0,
-          zIndex: 20,
-          background: boxColor ?? 'hsl(var(--skeleton))',
-          borderRadius: 4,
-        }}
-      />
-    </section>
+      {children}
+    </motion.div>
   );
 });
 
@@ -264,28 +190,23 @@ const AnimatedForm = memo(function AnimatedForm({
 
   return (
     <section className='max-md:w-full flex flex-col gap-4 w-96 mx-auto'>
-      <BoxReveal boxColor='hsl(var(--skeleton))' duration={0.3}>
-        <h2 className='font-bold text-3xl text-neutral-800 dark:text-neutral-200'>
+      <SimpleReveal delay={0.1}>
+        <h2 className='font-bold text-3xl text-foreground'>
           {header}
         </h2>
-      </BoxReveal>
+      </SimpleReveal>
 
       {subHeader && (
-        <BoxReveal boxColor='hsl(var(--skeleton))' duration={0.3} className='pb-2'>
-          <p className='text-neutral-600 text-sm max-w-sm dark:text-neutral-300'>
+        <SimpleReveal delay={0.2} className='pb-2'>
+          <p className='text-muted-foreground text-sm max-w-sm'>
             {subHeader}
           </p>
-        </BoxReveal>
+        </SimpleReveal>
       )}
 
-      <BoxReveal
-        boxColor='hsl(var(--skeleton))'
-        duration={0.3}
-        overflow='visible'
-        width='unset'
-      >
+      <SimpleReveal delay={0.3}>
         <button
-          className='g-button group/btn bg-transparent w-full rounded-md border h-10 font-medium outline-hidden hover:cursor-pointer'
+          className='g-button group/btn bg-transparent w-full rounded-md border h-10 font-medium hover:bg-accent/10 transition-colors disabled:opacity-50'
           type='button'
           onClick={handleGoogleSignIn}
           disabled={loading}
@@ -294,35 +215,29 @@ const AnimatedForm = memo(function AnimatedForm({
             <Chrome className="w-5 h-5" />
             Continue with Google
           </span>
-          <BottomGradient />
         </button>
-      </BoxReveal>
+      </SimpleReveal>
 
-      <BoxReveal boxColor='hsl(var(--skeleton))' duration={0.3} width='100%'>
+      <SimpleReveal delay={0.4}>
         <section className='flex items-center gap-4'>
-          <hr className='flex-1 border-1 border-dashed border-neutral-300 dark:border-neutral-700' />
-          <p className='text-neutral-700 text-sm dark:text-neutral-300'>or</p>
-          <hr className='flex-1 border-1 border-dashed border-neutral-300 dark:border-neutral-700' />
+          <hr className='flex-1 border-t border-border' />
+          <p className='text-muted-foreground text-sm'>or</p>
+          <hr className='flex-1 border-t border-border' />
         </section>
-      </BoxReveal>
+      </SimpleReveal>
 
       <form onSubmit={handleSubmit}>
-        {fields.map((field) => (
+        {fields.map((field, index) => (
           <section key={field.label} className='flex flex-col gap-2 mb-4'>
-            <BoxReveal boxColor='hsl(var(--skeleton))' duration={0.3}>
+            <SimpleReveal delay={0.5 + index * 0.1}>
               <Label htmlFor={field.label}>
-                {field.label} <span className='text-red-500'>*</span>
+                {field.label} <span className='text-destructive'>*</span>
               </Label>
-            </BoxReveal>
+            </SimpleReveal>
 
-            <BoxReveal
-              width='100%'
-              boxColor='hsl(var(--skeleton))'
-              duration={0.3}
-              className='flex flex-col space-y-2 w-full'
-            >
+            <SimpleReveal delay={0.6 + index * 0.1} className='flex flex-col space-y-2 w-full'>
               <section className='relative'>
-                <AnimatedInput
+                <LightInput
                   type={
                     field.type === 'password'
                       ? visible
@@ -341,7 +256,7 @@ const AnimatedForm = memo(function AnimatedForm({
                   <button
                     type='button'
                     onClick={toggleVisibility}
-                    className='absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5'
+                    className='absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5 text-muted-foreground hover:text-foreground transition-colors'
                   >
                     {visible ? (
                       <Eye className='h-5 w-5' />
@@ -354,50 +269,41 @@ const AnimatedForm = memo(function AnimatedForm({
 
               <section className='h-4'>
                 {errors[field.label] && (
-                  <p className='text-red-500 text-xs'>{errors[field.label]}</p>
+                  <p className='text-destructive text-xs'>{errors[field.label]}</p>
                 )}
               </section>
-            </BoxReveal>
+            </SimpleReveal>
           </section>
         ))}
 
-        <BoxReveal width='100%' boxColor='hsl(var(--skeleton))' duration={0.3}>
+        <SimpleReveal delay={0.8}>
           {errorField && (
-            <p className='text-red-500 text-sm mb-4'>{errorField}</p>
+            <p className='text-destructive text-sm mb-4'>{errorField}</p>
           )}
-        </BoxReveal>
+        </SimpleReveal>
 
-        <BoxReveal
-          width='100%'
-          boxColor='hsl(var(--skeleton))'
-          duration={0.3}
-          overflow='visible'
-        >
-          <button
-            className='bg-gradient-to-br relative group/btn from-zinc-200 dark:from-zinc-900
-            dark:to-zinc-900 to-zinc-200 block dark:bg-zinc-800 w-full text-black
-            dark:text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] 
-              dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset] outline-hidden hover:cursor-pointer disabled:opacity-50'
+        <SimpleReveal delay={0.9}>
+          <Button
+            className='w-full h-10 bg-primary hover:bg-primary/90 text-primary-foreground'
             type='submit'
             disabled={loading}
           >
             {loading ? 'Loading...' : `${submitButton} →`}
-            <BottomGradient />
-          </button>
-        </BoxReveal>
+          </Button>
+        </SimpleReveal>
 
         {textVariantButton && goTo && (
-          <BoxReveal boxColor='hsl(var(--skeleton))' duration={0.3}>
-            <section className='mt-4 text-center hover:cursor-pointer'>
+          <SimpleReveal delay={1.0}>
+            <section className='mt-4 text-center'>
               <button
                 type="button"
-                className='text-sm text-blue-500 hover:cursor-pointer outline-hidden'
+                className='text-sm text-primary hover:text-primary/80 transition-colors'
                 onClick={goTo}
               >
                 {textVariantButton}
               </button>
             </section>
-          </BoxReveal>
+          </SimpleReveal>
         )}
       </form>
     </section>
@@ -470,13 +376,9 @@ export default function AuthNew() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-      
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="relative w-full max-w-md">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl opacity-30" />
-        
-        <div className="relative bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl border border-white/20 dark:border-zinc-800/50 rounded-3xl p-8 shadow-2xl">
+        <div className="bg-card/80 backdrop-blur-sm border border-border rounded-2xl p-8 shadow-lg">
           <AnimatedForm
             header={isSignUp ? 'Create Account' : 'Welcome Back'}
             subHeader={
